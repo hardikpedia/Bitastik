@@ -1,4 +1,4 @@
-import SignInSide from './components/SignUp';
+import SignInSide from './components/login';
 
 function App() {
   return (
