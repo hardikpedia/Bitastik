@@ -1,8 +1,8 @@
-import SignInSide from './components/login';
-
+import Login from './components/login/signIn';
+// import SignUp from './components/login/signUp'
 function App() {
   return (
-    <SignInSide/>
+    <Login/>
   );
 }
 
