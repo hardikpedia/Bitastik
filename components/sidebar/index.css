@@ -6,7 +6,8 @@
   --grey: #a4b2bc;
   --white: #fff;
   /* --background: rgba(137, 171, 245, 0.37); */
-  --background:#ff4c68;
+  --background:rgb(255, 255, 255);
+
 }
 
 html {
@@ -19,6 +20,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: black;
 }
 
 body {

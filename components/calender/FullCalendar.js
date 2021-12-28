@@ -10,7 +10,6 @@ export default function FullCalendarComponent() {
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"

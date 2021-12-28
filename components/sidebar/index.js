@@ -13,7 +13,6 @@ import styled from "styled-components";
 // import { NavLink } from "react-router-dom";
 const Container = styled.div`
   position: fixed;
-
   .active {
     border-right: 4px solid var(--white);
 
@@ -91,6 +90,7 @@ const SlickBar = styled.ul`
   flex-direction: column;
   align-items: center;
   background-color: var(--black);
+  z-index: 100;
 
   padding: 2rem 0;
 

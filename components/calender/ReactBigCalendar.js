@@ -10,20 +10,6 @@ const localizer = momentLocalizer(moment);
 export default function ReactBigCalendar() {
   const [eventsData, setEventsData] = useState(events);
 
-  const handleSelect = ({ start, end }) => {
-    console.log(start);
-    console.log(end);
-    const title = window.prompt("New Event name");
-    if (title)
-      setEventsData([
-        ...eventsData,
-        {
-          start,
-          end,
-          title
-        }
-      ]);
-  };
   return (
     <div className="App">
       <Calendar
@@ -31,11 +17,10 @@ export default function ReactBigCalendar() {
         selectable
         localizer={localizer}
         defaultDate={new Date()}
-        defaultView="month"
+        defaultView="day"
         events={eventsData}
         style={{ height: "80vh" }}
-        onSelectEvent={(event) => alert(event.title)}
-        onSelectSlot={handleSelect}
+        // onSelectEvent={(event) => alert(event.title)}
       />
     </div>
   );

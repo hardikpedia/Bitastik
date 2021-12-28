@@ -52,16 +52,22 @@
 // )
 // export default MyCalendar
 
-import { StrictMode } from "react";
 import ReactBigCalendar from "../../components/calender/ReactBigCalendar"
 import React from 'react'
 
 function Calendar() {
     return (
-        <div>
-            <StrictMode>
+        <div style={{
+            marginLeft: '6rem',
+            width: '90vw',
+            overflowX: 'scroll',
+        }}>
+            <div style={{
+                minWidth: '40rem',
+
+            }}>
                 <ReactBigCalendar />
-            </StrictMode>
+            </div>
         </div>
     )
 }
