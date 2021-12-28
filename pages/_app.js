@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import "../components/sidebar/index.css"
+
 // import "./index.css"
 
 import Layout from '../components/layout/Layout'

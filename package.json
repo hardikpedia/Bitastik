@@ -8,12 +8,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-plugin-transform-require-ignore": "^0.1.1",
+    "dayz": "^2.9.1",
     "framer-motion": "^5.5.5",
+    "moment": "^2.29.1",
+    "moment-range": "^4.0.2",
     "next": "12.0.7",
     "react": "17.0.2",
+    "react-big-calendar": "^0.38.2",
     "react-dom": "17.0.2",
     "react-router-dom": "^6.2.1",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "typed.js": "^2.0.12",
+    "typeit": "^8.1.0",
+    "typeit-react": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "8.5.0",

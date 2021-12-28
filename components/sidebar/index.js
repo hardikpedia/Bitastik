@@ -218,85 +218,98 @@ const Logout = styled.button`
 `;
 
 const Sidebar = () => {
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
 
-    const [profileClick, setprofileClick] = useState(false);
-    const handleProfileClick = () => setprofileClick(!profileClick);
-    const size=24
-    return (
-        <Container>
-            <Button clicked={click} onClick={() => handleClick()}>
-                Click
-            </Button>
-            <SidebarContainer>
-                <Logo>
-                    <Image height={size} width={size} src={logo} alt="logo" />
-                </Logo>
-                <SlickBar clicked={click}>
-                    <Item
-                        onClick={() => setClick(false)}
-                        exact
-                        activeClassName="active"
-                        to="/"
-                    >
-                        <Image height={size} width={size} src={Home} alt="Home" />
-                        <Text clicked={click}>Home</Text>
-                    </Item>
-                    <Item
-                        onClick={() => setClick(false)}
-                        activeClassName="active"
-                        to="/team"
-                    >
-                        <Image height={size} width={size} src={Team} alt="Team" />
-                        <Text clicked={click}>Team</Text>
-                    </Item>
-                    <Item
-                        onClick={() => setClick(false)}
-                        activeClassName="active"
-                        to="/calender"
-                    >
-                        <Image height={size} width={size} src={Calender} alt="Calender" />
-                        <Text clicked={click}>Calender</Text>
-                    </Item>
-                    <Item
-                        onClick={() => setClick(false)}
-                        activeClassName="active"
-                        to="/documents"
-                    >
-                        <Image height={size} width={size} src={Documents} alt="Documents" />
-                        <Text clicked={click}>Documents</Text>
-                    </Item>
-                    <Item
-                        onClick={() => setClick(false)}
-                        activeClassName="active"
-                        to="/projects"
-                    >
-                        <Image height={size} width={size} src={Projects} alt="Projects" />
-                        <Text clicked={click}>Projects</Text>
-                    </Item>
-                </SlickBar>
+  const [profileClick, setprofileClick] = useState(false);
+  const handleProfileClick = () => setprofileClick(!profileClick);
+  const size = 24;
+  return (
+    <Container>
+      <Button clicked={click} onClick={() => handleClick()}>
+        Click
+      </Button>
+      <SidebarContainer>
+        <Logo>
+          <Image height={size} width={size} src={logo} alt="logo" />
+        </Logo>
+        <SlickBar clicked={click}>
+          <Link href="/home">
+            <Item
+              onClick={() => setClick(false)}
+              exact
+              activeClassName="active"
+              to="/"
+            >
+              <Image height={size} width={size} src={Home} alt="Home" />
+              <Text clicked={click}>Home</Text>
+            </Item>
+          </Link>
+          <Link href="/team">
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/team"
+            >
+              <Image height={size} width={size} src={Team} alt="Team" />
+              <Text clicked={click}>Team</Text>
+            </Item>
+          </Link>
+          <Link href="/calender">
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/calender"
+            >
+              <Image height={size} width={size} src={Calender} alt="Calender" />
+              <Text clicked={click}>Calendar</Text>
+            </Item>
+          </Link>
+          <Link href="/documents">
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/documents"
+            >
+              <Image height={size} width={size} src={Documents} alt="Documents" />
+              <Text clicked={click}>Documents</Text>
+            </Item>
+          </Link>
+          <Link href="/projects">
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/projects"
+            >
+              <Image height={size} width={size} src={Projects} alt="Projects" />
+              <Text clicked={click}>Projects</Text>
+            </Item>
+          </Link>
+         
+        </SlickBar>
 
-                <Profile clicked={profileClick}>
-                    <Image height={size} width={size}
-                        onClick={() => handleProfileClick()}
-                        src={logo}
-                        alt="Profile"
-                    />
-                    <Details clicked={profileClick}>
-                        <Name>
-                            <h4>Jhon&nbsp;Doe</h4>
-                            <Link href="/#">view&nbsp;profile</Link>
-                        </Name>
+        <Profile clicked={profileClick}>
+          <Image
+            height={size}
+            width={size}
+            onClick={() => handleProfileClick()}
+            src={logo}
+            alt="Profile"
+          />
+          <Details clicked={profileClick}>
+            <Name>
+              <h4>Jhon&nbsp;Doe</h4>
+              <Link href="/#">view&nbsp;profile</Link>
+            </Name>
 
-                        <Logout>
-                            <Image height={size} width={size} src={PowerOff} alt="logout" />
-                        </Logout>
-                    </Details>
-                </Profile>
-            </SidebarContainer>
-        </Container>
-    );
+            <Logout>
+              <Image height={size} width={size} src={PowerOff} alt="logout" />
+            </Logout>
+          </Details>
+        </Profile>
+      </SidebarContainer>
+    </Container>
+  );
 };
 
 export default Sidebar;
