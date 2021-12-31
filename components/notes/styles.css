@@ -1,19 +1,6 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html {
-  font-family: "Montserrat", sans-serif;
-}
-body {
-  background: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-  padding: 0 16px;
-}
 
 header {
-  background-color: black;
+  background-color: #000000;
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -21,7 +8,6 @@ header {
 
 header h1 {
   color: #fff;
-  font-family: "Ubuntu", sans-serif;
   font-weight: 200;
 }
 
@@ -37,17 +23,24 @@ footer p {
   color: #ccc;
 }
 .note {
-  background: #fff;
+  /* background: rgb(255, 255, 255); */
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   width: 240px;
   margin: 16px;
   float: left;
+  background-color: rgb(255, 255, 255);
 }
 .note h1 {
-  font-size: 1.1em;
+  font-size: 1em;
   margin-bottom: 6px;
+  color: black;
+  background: black;
+  margin:auto;
+  word-wrap: break-word;
+
+  /* visibility: visible; */
 }
 .note p {
   font-size: 1.1em;
@@ -60,12 +53,14 @@ footer p {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #f5ba13;
+  color: #000000;
   border: none;
   width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
+  background-color: white;
+
 }
 
 form.create-note {
@@ -91,7 +86,7 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #f5ba13;
+  background: #000000;
   color: #fff;
   border: none;
   border-radius: 50%;

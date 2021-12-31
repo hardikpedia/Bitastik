@@ -1,11 +1,17 @@
 import '../styles/globals.css'
-import "../components/sidebar/index.css"
-
-// import "./index.css"
-
+import '../components/notes/styles.css'
 import Layout from '../components/layout/Layout'
+import React from 'react'
+
+
 function MyApp({ Component, pageProps }) {
-  return <><Layout><Component {...pageProps} /></Layout></>
+  return (
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  )
 }
 
-export default MyApp;
+export default MyApp

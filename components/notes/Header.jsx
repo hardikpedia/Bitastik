@@ -5,6 +5,7 @@ function Header() {
   return (
     <header>
       <h1>
+        {" "}
         <HighlightIcon />
         BITNotes
       </h1>

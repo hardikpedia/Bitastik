@@ -1,7 +1,11 @@
 import MotionHoc from "../../components/animation/Motionhoc";
 import Classes from './home.module.css'
 const HomeComponent = () => {
-    return <h1 style={{color:"black"}} >Home</h1>;
+    return (
+        <div className="shivam">
+            <div className="hardik">Heeloo</div>
+        </div>
+    )
 };
 
 const Home = MotionHoc(HomeComponent);

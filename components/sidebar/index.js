@@ -265,14 +265,14 @@ const Sidebar = () => {
               <Text clicked={click}>Calendar</Text>
             </Item>
           </Link>
-          <Link href="/documents">
+          <Link href="/todolist">
             <Item
               onClick={() => setClick(false)}
               activeClassName="active"
-              to="/documents"
+              to="/todolist"
             >
               <Image height={size} width={size} src={Documents} alt="Documents" />
-              <Text clicked={click}>Documents</Text>
+              <Text clicked={click}>Todolist</Text>
             </Item>
           </Link>
           <Link href="/projects">

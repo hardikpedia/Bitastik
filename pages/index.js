@@ -1,6 +1,9 @@
 import MotionHoc from "../components/animation/Motionhoc";
 import TypeIt from "typeit-react";
-const HomeComponent = () => {
+import React from 'react'
+
+function HomeComponent() {
+    
     return (
         <div>
             <h1>
@@ -23,10 +26,10 @@ const HomeComponent = () => {
                     }}
                 />
             </h1>
+            {/* <button onClick={logoutClicked}>SIgnout</button> */}
         </div>
+    )
+}
+const Home=MotionHoc(HomeComponent)
 
-    );
-};
-const Home = MotionHoc(HomeComponent);
-
-export default Home;
+export default Home

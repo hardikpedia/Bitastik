@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 
-function App() {
+function Todolist() {
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
@@ -36,9 +36,8 @@ function App() {
           />
         );
       })}
-      <Footer />
     </div>
   );
 }
 
-export default App;
+export default Todolist;

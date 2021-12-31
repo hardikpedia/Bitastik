@@ -1,7 +1,7 @@
 import MotionHoc from "../../components/animation/Motionhoc";
-
+import Todolist from "../../components/notes/Todolist";
 const DocumentsComponent = () => {
-    return <h1>Documents</h1>;
+    return (<Todolist/>)
 };
 
 const Documents = MotionHoc(DocumentsComponent);
