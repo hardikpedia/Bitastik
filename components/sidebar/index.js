@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWindowSize } from "react-use";
@@ -230,20 +230,20 @@ const Sidebar = () => {
   const handleClick = () => setClick(!click);
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
-  const [sidenav, setSideNav] = useState(false);
+  const [sidenav, setSideNav] = useState(windowWidth < 768 ? true : false);
   const [btn, setBtn] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
- 
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     }
-    
+
   }, []);
 
   useEffect(() => {
