@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useWindowSize } from "react-use";
 //All the svg files
 import logo from "../../assets/logo.svg";
 import Home from "../../assets/home-solid.svg";
@@ -11,6 +12,12 @@ import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import buttonSide from "../../assets/button-side.png";
 import styled from "styled-components";
+// import dynamic from 'next/dynamic'
+
+// const DynamicComponentWithNoSSR = dynamic(
+//   () => import('../components/hello3'),
+//   { ssr: false }
+// )
 // import { NavLink } from "react-router-dom";
 const Container = styled.div`
   position: fixed;
@@ -224,19 +231,29 @@ const Sidebar = () => {
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
   const [sidenav, setSideNav] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [btn, setBtn] = useState(false);
+  const [windowWidth, setWindowWidth] = useState();
+
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
  
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    if (windowWidth <= 800) {
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }
+    
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth < 768) {
       setSideNav(false);
+      setBtn(true);
     } else {
       setSideNav(true);
+      setBtn(false);
     }
-    return(console.log("hi"))
   }, [windowWidth]);
 
   function showSideNav() {
@@ -246,14 +263,14 @@ const Sidebar = () => {
   return (
     <>
       <div>
-        <Link href="#">
+        {btn ? <div>
           <Image
             src={buttonSide}
             height={size}
             width={size}
             onClick={showSideNav}
           />
-        </Link>
+        </div> : null}
       </div>
       <Container className={sidenav ? "nav-menu-active" : "nav-menu"}>
         <Button clicked={click} onClick={() => handleClick()}>
