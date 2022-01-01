@@ -2,41 +2,23 @@ import '../styles/globals.css'
 import '../components/notes/styles.css'
 import Layout from '../components/layout/Layout'
 import React from 'react'
-import { useEffect } from 'react'
+
 import SuperTokensReact from 'supertokens-auth-react'
-import * as SuperTokensConfig from '../config/frontendConfig'
-import Session from 'supertokens-auth-react/recipe/session'
-import { redirectToAuth } from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
+
+import { frontendConfig } from '../config/frontendConfig'
 
 if (typeof window !== 'undefined') {
-  SuperTokensReact.init(SuperTokensConfig.frontendConfig())
+  // we only want to call this init function on the frontend, so we check typeof window !== 'undefined'
+  SuperTokensReact.init(frontendConfig())
 }
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    async function doRefresh() {
-      if (pageProps.fromSupertokens === 'needs-refresh') {
-        if (await Session.attemptRefreshingSession()) {
-          location.reload()
-        } else {
-          // user has been logged out
-          redirectToAuth()
-        }
-      }
-    }
-    doRefresh()
-  }, [pageProps.fromSupertokens])
-  if (pageProps.fromSupertokens === 'needs-refresh') {
-    return null
-  }
-  return (
-    <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
-
-  )
+  return <Layout>
+    <Component {...pageProps} />
+  </Layout>
 }
 
 export default MyApp
+
+
+

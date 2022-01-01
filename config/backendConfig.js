@@ -1,39 +1,30 @@
+
 import ThirdPartyEmailPasswordNode from 'supertokens-node/recipe/thirdpartyemailpassword'
 import SessionNode from 'supertokens-node/recipe/session'
 import { appInfo } from './appInfo'
 
-export let backendConfig = () => {
-  return {
-    framework: 'express',
-    supertokens: {
-      connectionURI: 'https://try.supertokens.io',
-    },
-    appInfo,
-    recipeList: [
-      ThirdPartyEmailPasswordNode.init({
-        providers: [
-          // We have provided you with development keys which you can use for testing.
-          // IMPORTANT: Please replace them with your own OAuth keys for production use.
-          ThirdPartyEmailPasswordNode.Google({
-            clientId: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-          }),
-          ThirdPartyEmailPasswordNode.Github({
-            clientId: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-          }),
-          ThirdPartyEmailPasswordNode.Apple({
-            clientId: process.env.APPLE_CLIENT_ID,
-            clientSecret: {
-              keyId: process.env.APPLE_KEY_ID,
-              privateKey: process.env.APPLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-              teamId: process.env.APPLE_TEAM_ID,
-            },
-          }),
+export const backendConfig = () => {
+    return {
+        framework: "express",
+        supertokens: {
+            // try.supertokens.io is for demo purposes. Replace this with the address of your core instance (sign up on supertokens.io), or self host a core.
+            connectionURI: "https://try.supertokens.io",
+            // apiKey: "IF YOU HAVE AN API KEY FOR THE CORE, ADD IT HERE",
+        },
+        appInfo,
+        recipeList: [
+            ThirdPartyEmailPasswordNode.init({
+                providers: [
+                    // We have provided you with development keys which you can use for testsing.
+                    // IMPORTANT: Please replace them with your own OAuth keys for production use.
+                    ThirdPartyEmailPasswordNode.Google({
+                        clientId: "597044962448-mnnl7ehkjvvb75cs6tg4mphvjideqk6i.apps.googleusercontent.com",
+                        clientSecret: "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"
+                    }),
+                ],
+            }),
+            SessionNode.init(),
         ],
-      }),
-      SessionNode.init(),
-    ],
-    isInServerlessEnv: true,
-  }
+        isInServerlessEnv: true,
+    }
 }
