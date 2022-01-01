@@ -39,3 +39,6 @@ h1{
 .nav-menu{
 display: none;
 }
+.nav-menu-active{
+  z-index: 1000;
+}
