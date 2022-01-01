@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 //All the svg files
@@ -9,6 +9,7 @@ import Calender from "../../assets/sceduled.svg";
 import Projects from "../../assets/starred.svg";
 import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
+import buttonSide from "../../assets/button-side.png";
 import styled from "styled-components";
 // import { NavLink } from "react-router-dom";
 const Container = styled.div`
@@ -220,95 +221,139 @@ const Logout = styled.button`
 const Sidebar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
+  const [sidenav, setSideNav] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+ 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    if (windowWidth <= 800) {
+      setSideNav(false);
+    } else {
+      setSideNav(true);
+    }
+    return(console.log("hi"))
+  }, [windowWidth]);
+
+  function showSideNav() {
+    setSideNav(!sidenav);
+  }
   const size = 24;
   return (
-    <Container>
-      <Button clicked={click} onClick={() => handleClick()}>
-        Click
-      </Button>
-      <SidebarContainer>
-        <Logo>
-          <Image height={size} width={size} src={logo} alt="logo" />
-        </Logo>
-        <SlickBar clicked={click}>
-          <Link href="/home">
-            <Item
-              onClick={() => setClick(false)}
-              exact
-              activeClassName="active"
-              to="/"
-            >
-              <Image height={size} width={size} src={Home} alt="Home" />
-              <Text clicked={click}>Home</Text>
-            </Item>
-          </Link>
-          <Link href="/team">
-            <Item
-              onClick={() => setClick(false)}
-              activeClassName="active"
-              to="/team"
-            >
-              <Image height={size} width={size} src={Team} alt="Team" />
-              <Text clicked={click}>Team</Text>
-            </Item>
-          </Link>
-          <Link href="/calender">
-            <Item
-              onClick={() => setClick(false)}
-              activeClassName="active"
-              to="/calender"
-            >
-              <Image height={size} width={size} src={Calender} alt="Calender" />
-              <Text clicked={click}>Calendar</Text>
-            </Item>
-          </Link>
-          <Link href="/todolist">
-            <Item
-              onClick={() => setClick(false)}
-              activeClassName="active"
-              to="/todolist"
-            >
-              <Image height={size} width={size} src={Documents} alt="Documents" />
-              <Text clicked={click}>Todolist</Text>
-            </Item>
-          </Link>
-          <Link href="/projects">
-            <Item
-              onClick={() => setClick(false)}
-              activeClassName="active"
-              to="/projects"
-            >
-              <Image height={size} width={size} src={Projects} alt="Projects" />
-              <Text clicked={click}>Projects</Text>
-            </Item>
-          </Link>
-         
-        </SlickBar>
-
-        <Profile clicked={profileClick}>
+    <>
+      <div>
+        <Link href="#">
           <Image
+            src={buttonSide}
             height={size}
             width={size}
-            onClick={() => handleProfileClick()}
-            src={logo}
-            alt="Profile"
+            onClick={showSideNav}
           />
-          <Details clicked={profileClick}>
-            <Name>
-              <h4>Jhon&nbsp;Doe</h4>
-              <Link href="/#">view&nbsp;profile</Link>
-            </Name>
+        </Link>
+      </div>
+      <Container className={sidenav ? "nav-menu-active" : "nav-menu"}>
+        <Button clicked={click} onClick={() => handleClick()}>
+          Click
+        </Button>
+        <SidebarContainer>
+          <Logo>
+            <Image height={size} width={size} src={logo} alt="logo" />
+          </Logo>
+          <SlickBar clicked={click}>
+            <Link href="/home">
+              <Item
+                onClick={() => setClick(false)}
+                exact
+                activeClassName="active"
+                to="/"
+              >
+                <Image height={size} width={size} src={Home} alt="Home" />
+                <Text clicked={click}>Home</Text>
+              </Item>
+            </Link>
+            <Link href="/team">
+              <Item
+                onClick={() => setClick(false)}
+                activeClassName="active"
+                to="/team"
+              >
+                <Image height={size} width={size} src={Team} alt="Team" />
+                <Text clicked={click}>Team</Text>
+              </Item>
+            </Link>
+            <Link href="/calender">
+              <Item
+                onClick={() => setClick(false)}
+                activeClassName="active"
+                to="/calender"
+              >
+                <Image
+                  height={size}
+                  width={size}
+                  src={Calender}
+                  alt="Calender"
+                />
+                <Text clicked={click}>Calendar</Text>
+              </Item>
+            </Link>
+            <Link href="/todolist">
+              <Item
+                onClick={() => setClick(false)}
+                activeClassName="active"
+                to="/todolist"
+              >
+                <Image
+                  height={size}
+                  width={size}
+                  src={Documents}
+                  alt="Documents"
+                />
+                <Text clicked={click}>Todolist</Text>
+              </Item>
+            </Link>
+            <Link href="/projects">
+              <Item
+                onClick={() => setClick(false)}
+                activeClassName="active"
+                to="/projects"
+              >
+                <Image
+                  height={size}
+                  width={size}
+                  src={Projects}
+                  alt="Projects"
+                />
+                <Text clicked={click}>Projects</Text>
+              </Item>
+            </Link>
+          </SlickBar>
 
-            <Logout>
-              <Image height={size} width={size} src={PowerOff} alt="logout" />
-            </Logout>
-          </Details>
-        </Profile>
-      </SidebarContainer>
-    </Container>
+          <Profile clicked={profileClick}>
+            <Image
+              height={size}
+              width={size}
+              onClick={() => handleProfileClick()}
+              src={logo}
+              alt="Profile"
+            />
+            <Details clicked={profileClick}>
+              <Name>
+                <h4>Jhon&nbsp;Doe</h4>
+                <Link href="/#">view&nbsp;profile</Link>
+              </Name>
+
+              <Logout>
+                <Image height={size} width={size} src={PowerOff} alt="logout" />
+              </Logout>
+            </Details>
+          </Profile>
+        </SidebarContainer>
+      </Container>
+    </>
   );
 };
 
