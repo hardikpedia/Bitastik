@@ -230,10 +230,17 @@ const Sidebar = () => {
   const handleClick = () => setClick(!click);
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
-  const [sidenav, setSideNav] = useState(windowWidth < 768 ? true : false);
-  const [btn, setBtn] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
-
+  const [sidenav, setSideNav] = useState(true)
+  const [btn, setBtn] = useState(false)
+  // if(windowWidth<768){
+  //   setSideNav(false)
+  //   setBtn(true)
+  // }
+  // else{
+  //   setSideNav(true)
+  //   setBtn(false)
+  // }
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
