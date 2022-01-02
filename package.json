@@ -28,6 +28,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.0",
     "react-use": "^17.3.2",
+    "simple-react-footer": "^1.0.2",
     "styled-components": "^5.3.3",
     "supertokens-auth-react": "^0.17.0",
     "supertokens-node": "^8.1.0",
