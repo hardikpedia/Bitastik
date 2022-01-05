@@ -2,7 +2,10 @@ import MotionHoc from "../components/animation/Motionhoc";
 import TypeIt from "typeit-react";
 import React from 'react'
 import dynamic from 'next/dynamic'
+import dbConnect from '../lib/dbconnect'
+
 const Footer = dynamic(() => import('../components/footer/footer'), { ssr: false })
+
 const HomeComponent = () => {
     return (
         <>

@@ -11,7 +11,9 @@ import Projects from "../../assets/starred.svg";
 import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import buttonSide from "../../assets/button-side.png";
+import News from "../../assets/news.png"
 import styled from "styled-components";
+
 // import dynamic from 'next/dynamic'
 
 // const DynamicComponentWithNoSSR = dynamic(
@@ -233,20 +235,17 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState();
   const [sidenav, setSideNav] = useState(true)
   const [btn, setBtn] = useState(false)
-  // if(windowWidth<768){
-  //   setSideNav(false)
-  //   setBtn(true)
-  // }
-  // else{
-  //   setSideNav(true)
-  //   setBtn(false)
-  // }
+
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+
+    if (window.innerWidth < 768) {
+      handleResize()
+    } 
     return () => {
       window.removeEventListener("resize", handleResize);
     }
@@ -279,104 +278,120 @@ const Sidebar = () => {
           />
         </div> : null}
       </div>
-      <Container className={sidenav ? "nav-menu-active" : "nav-menu"}>
-        <Button clicked={click} onClick={() => handleClick()}>
-          Click
-        </Button>
-        <SidebarContainer>
-          <Logo>
-            <Image height={size} width={size} src={logo} alt="logo" />
-          </Logo>
-          <SlickBar clicked={click}>
-            <Link href="/home">
-              <Item
-                onClick={() => setClick(false)}
-                exact
-                activeClassName="active"
-                to="/"
-              >
-                <Image height={size} width={size} src={Home} alt="Home" />
-                <Text clicked={click}>Home</Text>
-              </Item>
-            </Link>
-            <Link href="/team">
-              <Item
-                onClick={() => setClick(false)}
-                activeClassName="active"
-                to="/team"
-              >
-                <Image height={size} width={size} src={Team} alt="Team" />
-                <Text clicked={click}>Team</Text>
-              </Item>
-            </Link>
-            <Link href="/calender">
-              <Item
-                onClick={() => setClick(false)}
-                activeClassName="active"
-                to="/calender"
-              >
-                <Image
-                  height={size}
-                  width={size}
-                  src={Calender}
-                  alt="Calender"
-                />
-                <Text clicked={click}>Calendar</Text>
-              </Item>
-            </Link>
-            <Link href="/todolist">
-              <Item
-                onClick={() => setClick(false)}
-                activeClassName="active"
-                to="/todolist"
-              >
-                <Image
-                  height={size}
-                  width={size}
-                  src={Documents}
-                  alt="Documents"
-                />
-                <Text clicked={click}>Todolist</Text>
-              </Item>
-            </Link>
-            <Link href="/projects">
-              <Item
-                onClick={() => setClick(false)}
-                activeClassName="active"
-                to="/projects"
-              >
-                <Image
-                  height={size}
-                  width={size}
-                  src={Projects}
-                  alt="Projects"
-                />
-                <Text clicked={click}>Projects</Text>
-              </Item>
-            </Link>
-          </SlickBar>
+      {sidenav ?
+        <Container>
+          <Button clicked={click} onClick={() => handleClick()}>
+            Click
+          </Button>
+          <SidebarContainer>
+            <Logo>
+              <Image height={size} width={size} src={logo} alt="logo" />
+            </Logo>
+            <SlickBar clicked={click}>
+              <Link href="/home">
+                <Item
+                  onClick={() => setClick(false)}
+                  exact
+                  activeClassName="active"
+                  to="/"
+                >
+                  <Image height={size} width={size} src={Home} alt="Home" />
+                  <Text clicked={click}>Home</Text>
+                </Item>
+              </Link>
+              <Link href="/team">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/team"
+                >
+                  <Image height={size} width={size} src={Team} alt="Team" />
+                  <Text clicked={click}>Team</Text>
+                </Item>
+              </Link>
+              <Link href="/newsroom">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/newsroom"
+                >
+                  <Image
+                    height={size}
+                    width={size}
+                    src={News}
+                    alt="Newsroom"
+                  />
+                  <Text clicked={click}>Newsroom</Text>
+                </Item>
+              </Link>
+              <Link href="/calender">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/calender"
+                >
+                  <Image
+                    height={size}
+                    width={size}
+                    src={Calender}
+                    alt="Calender"
+                  />
+                  <Text clicked={click}>Calendar</Text>
+                </Item>
+              </Link>
+              <Link href="/todolist">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/todolist"
+                >
+                  <Image
+                    height={size}
+                    width={size}
+                    src={Documents}
+                    alt="Documents"
+                  />
+                  <Text clicked={click}>Todolist</Text>
+                </Item>
+              </Link>
+              <Link href="/projects">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/projects"
+                >
+                  <Image
+                    height={size}
+                    width={size}
+                    src={Projects}
+                    alt="Projects"
+                  />
+                  <Text clicked={click}>Projects</Text>
+                </Item>
+              </Link>
+            </SlickBar>
 
-          <Profile clicked={profileClick}>
-            <Image
-              height={size}
-              width={size}
-              onClick={() => handleProfileClick()}
-              src={logo}
-              alt="Profile"
-            />
-            <Details clicked={profileClick}>
-              <Name>
-                <h4>Jhon&nbsp;Doe</h4>
-                <Link href="/#">view&nbsp;profile</Link>
-              </Name>
+            <Profile clicked={profileClick}>
+              <Image
+                height={size}
+                width={size}
+                onClick={() => handleProfileClick()}
+                src={logo}
+                alt="Profile"
+              />
+              <Details clicked={profileClick}>
+                <Name>
+                  <h4>Jhon&nbsp;Doe</h4>
+                  <Link href="/#">view&nbsp;profile</Link>
+                </Name>
 
-              <Logout>
-                <Image height={size} width={size} src={PowerOff} alt="logout" />
-              </Logout>
-            </Details>
-          </Profile>
-        </SidebarContainer>
-      </Container>
+                <Logout>
+                  <Image height={size} width={size} src={PowerOff} alt="logout" />
+                </Logout>
+              </Details>
+            </Profile>
+          </SidebarContainer>
+        </Container> : null}
     </>
   );
 };
