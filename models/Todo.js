@@ -2,7 +2,7 @@ import { Schema, model, models } from 'mongoose';
 
 const todoSchema = new Schema(
   {
-    userId: {
+    user_id: {
       type: String,
       required: true,
     },
