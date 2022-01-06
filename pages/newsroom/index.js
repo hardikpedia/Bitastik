@@ -1,25 +1,33 @@
-import NewsComponent from "../../components/news/news"
+import NewsList from "../../components/news/NewsList"
 import dbConnect from "../../lib/dbconnect"
-import News from "../../models/news"
+import news from "../../models/news"
 
-function NewsPage({news}) {
+function NewsPage(props) {
     return (
         <div>
-            <NewsComponent data={news}/>
+            <h1>NEWSROOM 101</h1>
+            <NewsList data={props.news}/>
         </div>
     )
-}0
+}
 
-export default NewsPage
 
 export async function getStaticProps() {
-    dbConnect()
-    const data = await News.find({})
-    const news = JSON.parse(JSON.stringify(data))
+    await dbConnect()
+    const data = await news.find({})
+    // const news = JSON.parse(JSON.stringify(data))
     return {
         props: {
-            news: news
+            news:data.map((info)=>({
+                title:info.title,
+                date:info.date,
+                image:info.image,
+                id:info._id.toString(),
+                description:info.description
+            }))
         },
         revalidate: 60,
     }
 }
+
+export default NewsPage
