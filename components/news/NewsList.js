@@ -3,6 +3,8 @@ import classes from './NewsList.module.css';
 
 function NewsList(props) {
     return (
+        <>
+        <h1>NEWSROOM 101</h1>
         <ul className={classes.list}>
             {props.data.map((details) => (
                 <NewsItem
@@ -14,6 +16,7 @@ function NewsList(props) {
                 />
             ))}
         </ul>
+        </>
     );
 }
 
