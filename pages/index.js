@@ -3,6 +3,7 @@ import TypeIt from "typeit-react";
 import React from 'react'
 import dynamic from 'next/dynamic'
 import dbConnect from '../lib/dbconnect'
+import { signInWithGoogle } from "../firebase/firebase";
 
 const Footer = dynamic(() => import('../components/footer/footer'), { ssr: false })
 
@@ -31,6 +32,7 @@ const HomeComponent = () => {
                     />
                 </h1>
             </div>
+            
             {/* <div>
                 <Footer />
 

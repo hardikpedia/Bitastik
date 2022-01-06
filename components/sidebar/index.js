@@ -13,14 +13,9 @@ import PowerOff from "../../assets/power-off-solid.svg";
 import buttonSide from "../../assets/button-side.png";
 import News from "../../assets/news.png"
 import styled from "styled-components";
+import { auth, signOutFromGoogle } from '../../firebase/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
-// import dynamic from 'next/dynamic'
-
-// const DynamicComponentWithNoSSR = dynamic(
-//   () => import('../components/hello3'),
-//   { ssr: false }
-// )
-// import { NavLink } from "react-router-dom";
 const Container = styled.div`
   position: fixed;
   .active {
@@ -31,6 +26,7 @@ const Container = styled.div`
         brightness(103%) contrast(103%);
     }
   }
+  z-index: 1000;
 `;
 
 const Button = styled.button`
@@ -176,6 +172,7 @@ const Profile = styled.div`
       padding: 2px;
     }
   }
+  /* z-index: 1000; */
 `;
 
 const Details = styled.div`
@@ -236,6 +233,11 @@ const Sidebar = () => {
   const [sidenav, setSideNav] = useState(true)
   const [btn, setBtn] = useState(false)
 
+  async function signOut(){
+    await signOutFromGoogle();
+  }
+  const [user] = useAuthState(auth)
+  console.log(user)
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -245,7 +247,7 @@ const Sidebar = () => {
 
     if (window.innerWidth < 768) {
       handleResize()
-    } 
+    }
     return () => {
       window.removeEventListener("resize", handleResize);
     }
@@ -288,12 +290,12 @@ const Sidebar = () => {
               <Image height={size} width={size} src={logo} alt="logo" />
             </Logo>
             <SlickBar clicked={click}>
-              <Link href="/home">
+              <Link href="/dashboard">
                 <Item
                   onClick={() => setClick(false)}
                   exact
                   activeClassName="active"
-                  to="/"
+                  to="/dashboard"
                 >
                   <Image height={size} width={size} src={Home} alt="Home" />
                   <Text clicked={click}>Home</Text>
@@ -381,11 +383,12 @@ const Sidebar = () => {
               />
               <Details clicked={profileClick}>
                 <Name>
-                  <h4>Jhon&nbsp;Doe</h4>
-                  <Link href="/#">view&nbsp;profile</Link>
+                  {/* <h4>Jhon&nbsp;Doe</h4> */}
+                  <h5 style={{display:"inline"}}>{user.displayName}</h5>
+                  <Link href="/dashboard">view&nbsp;dashboard</Link>
                 </Name>
 
-                <Logout>
+                <Logout onClick={signOut} >
                   <Image height={size} width={size} src={PowerOff} alt="logout" />
                 </Logout>
               </Details>

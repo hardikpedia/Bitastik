@@ -11,7 +11,6 @@ function NewsPage(props) {
     )
 }
 
-
 export async function getStaticProps() {
     await dbConnect()
     const data = await news.find({})

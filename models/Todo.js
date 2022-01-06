@@ -2,7 +2,7 @@ import { Schema, model, models } from 'mongoose';
 
 const todoSchema = new Schema(
   {
-    user_id: {
+    uid: {
       type: String,
       required: true,
     },
@@ -10,7 +10,7 @@ const todoSchema = new Schema(
       type: String,
       max: 25,
     },
-    note: {
+    content: {
       type: String,
       max: 100,
     },
