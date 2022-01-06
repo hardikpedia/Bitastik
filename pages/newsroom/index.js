@@ -5,7 +5,7 @@ import news from "../../models/news"
 function NewsPage(props) {
     return (
         <div>
-            <h1>NEWSROOM 101</h1>
+            
             <NewsList data={props.news}/>
         </div>
     )
