@@ -10,7 +10,7 @@ import Calender from "../../assets/sceduled.svg";
 import Projects from "../../assets/starred.svg";
 import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
-import buttonSide from "../../assets/button-side.png";
+import downhil from "../../assets/downhil.gif";
 import News from "../../assets/news.png"
 import styled from "styled-components";
 import { auth, signOutFromGoogle } from '../../firebase/firebase'
@@ -273,9 +273,9 @@ const Sidebar = () => {
       <div>
         {btn ? <div>
           <Image
-            src={buttonSide}
-            height={size}
-            width={size}
+            src={downhil}
+            height={55}
+            width={55}
             onClick={showSideNav}
           />
         </div> : null}
