@@ -5,8 +5,8 @@ import { format } from "timeago.js";
 import Upvote from '../../assets/upvote.png'
 import Downvote from '../../assets/downvote.png'
 function Confession({confession}) {
-    function upvoteHandler(){
-
+    async function upvoteHandler(){
+        
     }
     function downvoteHandler(){
 

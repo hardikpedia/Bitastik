@@ -4,7 +4,10 @@ import news from "../../models/news"
 import MotionHoc from "../../components/animation/Motionhoc"
 function NewsPage(props) {
     return (
-        <div>
+        <div style={{
+            position: "absolute",
+            inset: 0,
+        }}>
             <NewsList data={props.news} />
         </div>
     )

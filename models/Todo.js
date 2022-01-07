@@ -14,8 +14,7 @@ const todoSchema = new Schema(
       type: String,
       max: 100,
     },
-  },
-  { timestamps: true }
+  }
 );
 
 export default models.todolist || model('todolist', todoSchema);

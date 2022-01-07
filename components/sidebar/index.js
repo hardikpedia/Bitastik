@@ -77,7 +77,6 @@ const SidebarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   position: relative;
 `;
 
@@ -100,7 +99,6 @@ const SlickBar = styled.ul`
 
   padding: 2rem 0;
 
-  position: absolute;
   top: 6rem;
   left: 0;
 

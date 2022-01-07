@@ -1,41 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
-// import Todo from '../../models/Todo'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth} from "../../firebase/firebase";
+import { auth } from "../../firebase/firebase";
 
-function Todolist({todo}) {
+function Todolist() {
   const [user] = useAuthState(auth);
+  const [notes, setNotes] = useState([]);
 
-  const [notes, setNotes] = useState(todo);
+  useEffect(() => {
+    if (user) {
+      const fetchData = async () => {
+        const todo = await fetch(`/api/todo/${user.uid}`);
+        const data = await todo.json();
+        setNotes(data.data);
+      };
+      fetchData();
+    }
+  }, [user]);
+
   async function addNote(newNote) {
-    setNotes(prevNotes => {
+    setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
-    await fetch('/api/todo', {
-      method: 'POST',
+    await fetch(`/api/todo/${user.uid}`, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newNote)
-        })
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newNote),
+    });
   }
 
   async function deleteNote(id) {
-    setNotes(prevNotes => {
+    setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
     });
-    await fetch("/api/todo", {
+    await fetch(`/api/todo/${user.uid}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({id: notes[id]._id}),
+      body: JSON.stringify({ id: notes[id]._id }),
     });
   }
 
