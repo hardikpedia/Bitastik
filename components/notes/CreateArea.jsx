@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth} from "../../firebase/firebase";
 
 function CreateArea(props) {
+  const [user] = useAuthState(auth);
+
   const [isExpanded, setExpanded] = useState(false);
 
   const [note, setNote] = useState({
     title: "",
-    content: ""
+    note: "",
+    uid: user.uid,
   });
 
   function handleChange(event) {
@@ -26,7 +31,8 @@ function CreateArea(props) {
     props.onAdd(note);
     setNote({
       title: "",
-      content: ""
+      note: "",
+      uid: user.uid,
     });
     event.preventDefault();
   }
@@ -48,10 +54,10 @@ function CreateArea(props) {
         )}
 
         <textarea
-          name="content"
+          name="note"
           onClick={expand}
           onChange={handleChange}
-          value={note.content}
+          value={note.note}
           placeholder="Take a note..."
           rows={isExpanded ? 3 : 1}
         />

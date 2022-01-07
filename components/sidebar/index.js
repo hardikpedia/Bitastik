@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useWindowSize } from "react-use";
 //All the svg files
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/bold.png";
 import Home from "../../assets/home-solid.svg";
 import Team from "../../assets/social.svg";
 import Calender from "../../assets/sceduled.svg";
@@ -164,7 +164,6 @@ const Profile = styled.div`
   img {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 50%;
     cursor: pointer;
 
     &:hover {
@@ -237,7 +236,7 @@ const Sidebar = () => {
     await signOutFromGoogle();
   }
   const [user] = useAuthState(auth)
-  console.log(user)
+  // console.log(user)
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };

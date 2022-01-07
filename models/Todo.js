@@ -10,7 +10,7 @@ const todoSchema = new Schema(
       type: String,
       max: 25,
     },
-    content: {
+    note: {
       type: String,
       max: 100,
     },

@@ -1,12 +1,11 @@
 import NewsList from "../../components/news/NewsList"
 import dbConnect from "../../lib/dbconnect"
 import news from "../../models/news"
-
+import MotionHoc from "../../components/animation/Motionhoc"
 function NewsPage(props) {
     return (
         <div>
-            
-            <NewsList data={props.news}/>
+            <NewsList data={props.news} />
         </div>
     )
 }
