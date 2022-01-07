@@ -21,7 +21,7 @@ async function handler(req, res) {
   if (req.method === "GET") {
     try {
       console.log("hello world");
-      const { uid } = req.body;
+      const uid  = req.query.uid;
       const todo_instance = await Todo.find({ uid });
       res.status(200).json({
         message: "All Todos of the particular user fetched",
