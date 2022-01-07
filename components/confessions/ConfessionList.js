@@ -1,11 +1,29 @@
-import Confession from "./ConfessionItem";
-function ConfessionList(){
-    return (<div className="feed">
+import ConfessionItem from "./ConfessionItem";
 
-        <div className="feedWrapper">
-            {Confession.map((p) => (
-                <Confession confession={p} />
-            ))}
-        </div>
-    </div>)
+
+function ConfessionList({confessions}) {
+  return (<div className="feed">
+    <div className="feedWrapper">
+      {confessions.map((p) => (
+        <ConfessionItem confession={p} key={p.uid} />
+      ))}
+    </div>
+  </div>)
 }
+export default ConfessionList;
+
+
+// export async function getStaticProps() {
+//   await dbConnect()
+//   const data = await Confession.find({})
+//   // const news = JSON.parse(JSON.stringify(data))
+//   return {
+//     props: {
+//       Confession: data.map((info) => ({
+//         content: info.description,
+//         uid:info.uid,
+//       }))
+//     },
+//     revalidate: 60,
+//   }
+// }

@@ -21,7 +21,7 @@ function Confession({confession}) {
                     </div>
                 </div>
                 <div className="postCenter">
-                    <span className="postText">{confession.desc}</span>
+                    <span className="postText">{confession.content}</span>
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">

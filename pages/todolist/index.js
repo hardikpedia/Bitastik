@@ -9,7 +9,7 @@ const Documents = ({todo}) => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     const fetchData = async () => {
-      const todo = await fetch('/api/todo', {
+      const todo = await fetch('/api/todo?uid='+user.uid, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

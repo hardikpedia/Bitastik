@@ -1,5 +1,6 @@
+import { Schema, model, models } from 'mongoose';
 
-const confessionSchema = new mongoose.Schema(
+const confessionSchema = new Schema(
   {
     uid: {
       type: String,
@@ -21,4 +22,4 @@ const confessionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default models.Confession || model('Confession', confessionSchema);
+export default models.confession || model('confession', confessionSchema);
