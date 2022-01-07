@@ -6,7 +6,7 @@ import Upvote from '../../assets/upvote.png'
 import Downvote from '../../assets/downvote.png'
 function Confession({confession}) {
     async function upvoteHandler(){
-        
+    
     }
     function downvoteHandler(){
 

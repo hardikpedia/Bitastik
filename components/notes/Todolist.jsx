@@ -60,7 +60,7 @@ function Todolist() {
             id={index}
             uid={user.uid}
             title={noteItem.title}
-            content={noteItem.content}
+            note={noteItem.note}
             onDelete={deleteNote}
           />
         );
