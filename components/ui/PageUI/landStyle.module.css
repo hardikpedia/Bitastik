@@ -3,7 +3,7 @@
 }
 .main body {
   font-family: "Montserrat", sans-serif;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* background-image: url('../../../assets/background.jpg'); */
   color: black;
   margin: 0;
   padding: 0;

@@ -1,15 +1,14 @@
 
 const confessionSchema = new mongoose.Schema(
   {
-    userId: {
+    uid: {
       type: String,
       required: true,
     },
-    desc: {
+    content: {
       type: String,
       max: 500,
     },
-
     upvotes: {
       type: Array,
       default: [],
@@ -22,4 +21,4 @@ const confessionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Confession", confessionSchema);
+export default models.Confession || model('Confession', confessionSchema);

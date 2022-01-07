@@ -297,17 +297,17 @@ const Sidebar = () => {
                   to="/dashboard"
                 >
                   <Image height={size} width={size} src={Home} alt="Home" />
-                  <Text clicked={click}>Home</Text>
+                  <Text clicked={click}>Dashboard</Text>
                 </Item>
               </Link>
-              <Link href="/team">
+              <Link href="/confessions">
                 <Item
                   onClick={() => setClick(false)}
                   activeClassName="active"
-                  to="/team"
+                  to="/confessions"
                 >
                   <Image height={size} width={size} src={Team} alt="Team" />
-                  <Text clicked={click}>Team</Text>
+                  <Text clicked={click}>Confessions</Text>
                 </Item>
               </Link>
               <Link href="/newsroom">

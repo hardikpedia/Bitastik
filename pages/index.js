@@ -16,6 +16,7 @@ const HomeComponent = () => {
                         options={{
                             strings: ["Bitastik"],
                             waitUntilVisible: true,
+                            cursorChar:" "
                         }}
                     />
 
@@ -33,10 +34,10 @@ const HomeComponent = () => {
                 </h1>
             </div>
             
-            {/* <div>
+            <div style={{position:"absolute",bottom:"0"}}>
                 <Footer />
 
-            </div> */}
+            </div>
         </>
 
     )

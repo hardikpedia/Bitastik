@@ -6,7 +6,7 @@
   --grey: #a4b2bc;
   --white: #fff;
   /* --background: rgba(137, 171, 245, 0.37); */
-  --background: rgb(255, 255, 255);
+  --background: #ffffff;
 }
 
 html {
@@ -29,6 +29,7 @@ body {
   background-color: var(--background);
   font-family: "Montserrat", sans-serif;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* background-image: url('../assets//background.jpg'); */
   color: black;
   margin: 0;
   padding: 0;
