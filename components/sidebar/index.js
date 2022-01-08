@@ -12,6 +12,7 @@ import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import downhil from "../../assets/downhil.gif";
 import News from "../../assets/news.png"
+import Hamburger from '../../assets/hamburger.png'
 import styled from "styled-components";
 import { auth, signOutFromGoogle } from '../../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -96,12 +97,11 @@ const SlickBar = styled.ul`
   align-items: center;
   background-color: var(--black);
   z-index: 100;
+  margin: 3rem 0 auto 0;
 
-  padding: 2rem 0;
-
-  top: 6rem;
+  top: 3rem;
   left: 0;
-
+  position: absolute;
   width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};
   transition: all 0.5s ease;
   border-radius: 0 30px 30px 0;
@@ -267,12 +267,12 @@ const Sidebar = () => {
   const size = 24;
   return (
     <>
-      <div>
+      <div style={{position :"fixed",bottom:"0",zIndex:"100"}}>
         {btn ? <div>
           <Image
-            src={downhil}
-            height={55}
-            width={55}
+            src={Hamburger}
+            height={36}
+            width={36}
             onClick={showSideNav}
           />
         </div> : null}
