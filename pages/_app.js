@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styles/globals.css'
 import '../components/notes/styles.css'
-import '../components/confessions/Confessions.css'
+import '../components/confessions/ConfessionItem.css'
 import '../components/confessions/ConfessionList'
 import Layout from '../components/layout/Layout'
 import { useAuthState } from 'react-firebase-hooks/auth'

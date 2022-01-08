@@ -50,11 +50,11 @@ function Todolist() {
   }
 
   return (
-    <div >
+    <div>
       <Header />
-      <div >
-      <CreateArea onAdd={addNote} />
       <div className="ok">
+      <CreateArea onAdd={addNote} />
+     
       {notes.map((noteItem, index) => {
         return (
           <Note
@@ -67,8 +67,8 @@ function Todolist() {
           />
         );
       })}
-      </div>
-      </div>
+     
+     </div>
     </div>
   );
 }

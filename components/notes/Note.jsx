@@ -8,7 +8,7 @@ function Note(props) {
 
   return (
     <div className="note">
-      <h3 style={{color:"black"}} className="hii">{props.title}</h3>
+      <h3 style={{color:"#222024"}} className="hii">{props.title}</h3>
       <p>{props.note}</p>
       <button onClick={handleClick}>
         <DeleteIcon />
