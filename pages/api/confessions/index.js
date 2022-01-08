@@ -8,7 +8,7 @@ async function handler(req, res) {
             const { uid,content } = req.body;
             const confession_instance = new Confession({
                 uid: uid,
-                content: content,
+                CONTENT: content,
             });
             await confession_instance.save();
             res.status(200).json({ message: "content Added", Status: "Success" });
@@ -51,11 +51,10 @@ async function handler(req, res) {
 
     if (req.method === "PUT") {
         try {
-            const { uid, content } = req.body;
-            const confession_instance = new Confession({
-                uid: uid,
-                title: content,
-            });
+            const { uid, _id, type } = req.body;
+            const confession_instance =await Confession.findOne({_id:_id})
+            console.log(confession_instance);
+            confession_instance[type].push(uid);
             await confession_instance.save();
             res.status(200).json({ message: "content Added", Status: "Success" });
         } catch (err) {

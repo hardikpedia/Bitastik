@@ -9,6 +9,7 @@ import { auth, signInWithGoogle } from '../firebase/firebase'
 import { useRouter } from 'next/router'
 import Home from '.'
 import Land from '../components/layout/Land'
+
 function MyApp({ Component, pageProps }) {
   const [user] = useAuthState(auth)
   console.log(user)
@@ -18,9 +19,10 @@ function MyApp({ Component, pageProps }) {
   }, [user])
   return (
     <> {user ?
-      <Layout>
-        <Component {...pageProps} />
-      </Layout> :
+        <Layout>
+          <Component {...pageProps} />
+        </Layout> 
+    :
       <Land>
         <div>
           <Home />

@@ -1,5 +1,6 @@
 .feed{
-    flex:5.5
+position: absolute;
+top: 0;    
 }
 
 .feedWrapper{

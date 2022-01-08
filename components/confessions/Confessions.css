@@ -66,8 +66,8 @@
 }
 
 .likeIcon{
-    width: 24px;
-    height: 24px;
+    width: 0.1em;
+    height: 0.1em;
     margin-right: 5px;
     cursor: pointer;
 }

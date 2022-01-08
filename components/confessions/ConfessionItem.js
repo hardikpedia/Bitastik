@@ -1,15 +1,42 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Image from "next/image";
 import { format } from "timeago.js";
-
 import Upvote from '../../assets/upvote.png'
 import Downvote from '../../assets/downvote.png'
-function Confession({confession}) {
-    async function upvoteHandler(){
-    
-    }
-    function downvoteHandler(){
 
+function Confession({ confession }) {
+    const [upvoteCount, setUpvoteCount] = useState(confession.upvotes.length);
+    const [isUpvoted, setIsUpvoted] = useState(false);
+
+    const [downvoteCount, setDownvoteCount] = useState(confession.downvotes.length);
+    const [isDownvoted, setIsDownvoted] = useState(false);
+    const [user, setUser] = useState(confession.uid);
+
+
+    useEffect(() => {
+        if(isUpvoted){
+            setUpvoteCount(upvoteCount+1);
+            
+        }
+        else{
+            setUpvoteCount(upvoteCount-1);
+        }
+    }, [isUpvoted]);
+    useEffect(() => {
+        if(isDownvoted){
+            setDownvoteCount(downvoteCount+1);
+        }
+        else{
+            setDownvoteCount(downvoteCount-1)
+        }
+    }, [isDownvoted]);
+    function upvoteHandler() {
+        setIsUpvoted(true)
+        setIsDownvoted(false)
+    }
+    function downvoteHandler() {
+        setIsDownvoted(true)
+        setIsUpvoted(false)
     }
 
     return (
@@ -31,14 +58,14 @@ function Confession({confession}) {
                             onClick={upvoteHandler}
                             alt=""
                         />
-                        <span className="postLikeCounter">upvotes</span>
+                        <span className="postLikeCounter">{upvoteCount}</span>
                         <Image
                             className="likeIcon"
                             src={Downvote}
                             onClick={downvoteHandler}
                             alt=""
                         />
-                        <span className="postLikeCounter">downvotes </span>
+                        <span className="postLikeCounter">{downvoteCount}</span>
                     </div>
                 </div>
             </div>

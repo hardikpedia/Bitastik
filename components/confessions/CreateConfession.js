@@ -1,11 +1,15 @@
-function CreateConfession({data}){
-    return (<div>
-        <input
-            placeholder={`What's in your mind ${data.username} ?`}
-            className="shareInput"
-        />
-        <button>Confess</button>
-        </div>)
-}
+function CreateConfession({ data }) {
+    function handleClick() {
 
-export default CreateConfession
+    }
+    return (<div>
+        <textarea
+            style={{ color: "white", backgroundColor: "black" }}
+             placeholder={`What's in your mind ${data.displayName} ?`}
+            className="shareInput"
+            name="confession"
+        />
+        <button onClick={handleClick}>Confess</button>
+    </div>)
+}
+export default CreateConfession;

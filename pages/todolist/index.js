@@ -5,7 +5,11 @@ import { auth } from "../../firebase/firebase";
 import { useEffect } from "react";
 
 const Documents = ({todo}) => {
-  return <Todolist />;
+  return (
+    <div style={{position:"absolute",top:"0"}}>
+      <Todolist />
+    </div>
+  )
 };
 
 export default Documents

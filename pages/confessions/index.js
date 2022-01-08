@@ -2,8 +2,12 @@ import MotionHoc from "../../components/animation/Motionhoc";
 import ConfessionList from "../../components/confessions/ConfessionList";
 import Confession from "../../models/Confession";
 import dbConnect from '../../lib/dbconnect'
-const ConfessionPage= ({confessions}) => {
-    return <ConfessionList confessions={confessions}/>;
+const ConfessionPage = ({ confessions }) => {
+
+    return <div style={{position:"absolute",top:"0"}}>
+        <ConfessionList confessions={confessions} />
+
+    </div>
 };
 
 
