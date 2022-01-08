@@ -5,8 +5,12 @@
   --black: #09090c;
   --grey: #a4b2bc;
   --white: #fff;
-  /* --background: rgba(137, 171, 245, 0.37); */
-  --background: #ac7070;
+  --background: rgba(137, 171, 245, 0.37);
+
+
+
+  /* --background: #ffffff; */
+
 }
 
 html {
@@ -29,7 +33,13 @@ body {
   /* background-color: var(--background); */
   font-family: "Montserrat", sans-serif;
   /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
-  /* background-image: url('../assets/newspaper.jpg'); */
+
+
+
+  /* background-image: url('../assets//background.jpg'); */
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+
   color: black;
   margin: 0;
   padding: 0;

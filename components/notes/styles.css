@@ -1,4 +1,6 @@
-
+/* .ok {
+  margin-left: 4rem;
+} */
 header {
   background-color: #000000;
   margin: auto ;
@@ -35,13 +37,14 @@ footer p {
   
   margin: 1rem;
   float: left;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
+
 }
 .note h3 {
   font-size: 1rem;
   margin-bottom: 6px;
-  color: black;
-  background: white;
+  color:#222024;
+  
   margin:auto;
   word-wrap: break-word;
 
@@ -52,6 +55,7 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+  color: #222024;
 }
 
 .note button {
@@ -105,16 +109,57 @@ form.create-note button {
   outline: none;
 }
 
-@media screen and (max-width: 600px) {
-  .note{
-     width: 40vw;
-     min-height: 100%;
+.ok{
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+ margin-left: 4rem;
+  
+}
+@media screen and (max-width: 960px) {
+  .ok{
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+   
+    
+  }
+  .note {
+    width: 40vw;
   }
 }
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 767px) {
+  .ok{
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+   margin-left: 0%;
+    
+  }
+  .note {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ok{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    margin-left: 0%;
+     
+   }
   .note{
      width: 80vw;
      min-height: 100%;
   }
 }
+
+/* @media screen and (max-width: 400px) {
+  .note{
+     width: 80vw;
+     min-height: 100%;
+  }
+} */
