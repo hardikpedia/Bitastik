@@ -3,7 +3,7 @@ import books from '../../assets/books.jpg'
 import Newspaper from '../../assets/newspaper.jpg'
 const Documents = ({todo}) => {
   return (
-    <div>
+    <div style={{position:"absolute",top:"0"}}>
       <Todolist />
     </div>
   )
