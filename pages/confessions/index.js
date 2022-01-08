@@ -1,4 +1,3 @@
-import MotionHoc from "../../components/animation/Motionhoc";
 import ConfessionList from "../../components/confessions/ConfessionList";
 import Confession from "../../models/Confession";
 import dbConnect from '../../lib/dbconnect'

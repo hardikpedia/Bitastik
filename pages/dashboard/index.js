@@ -26,6 +26,5 @@ const HomeComponent = () => {
     )
 };
 
-const Home = MotionHoc(HomeComponent);
 
-export default Home;
+export default HomeComponent;

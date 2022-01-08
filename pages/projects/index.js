@@ -1,9 +1,13 @@
-import MotionHoc from "../../components/animation/Motionhoc";
-
+import Books from '../../assets/books.jpg'
 const ProjectsComponent = () => {
-    return <h1>Projects</h1>;
+
+    return (
+    <div style={{backgroundImage:`url(${Books})`}}>
+        <h1>Projects</h1>;
+
+        </div>)
+
 };
 
-const Projects = MotionHoc(ProjectsComponent);
 
-export default Projects;
+export default ProjectsComponent;

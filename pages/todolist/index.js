@@ -1,12 +1,9 @@
-import MotionHoc from "../../components/animation/Motionhoc";
 import Todolist from "../../components/notes/Todolist";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/firebase";
-import { useEffect } from "react";
-
+import books from '../../assets/books.jpg'
+import Newspaper from '../../assets/newspaper.jpg'
 const Documents = ({todo}) => {
   return (
-    <div style={{position:"absolute",top:"0"}}>
+    <div>
       <Todolist />
     </div>
   )
