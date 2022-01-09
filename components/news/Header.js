@@ -1,13 +1,13 @@
 import React from "react";
-import HighlightIcon from "@material-ui/icons/Highlight";
-// import Header from "./Header";
+import Image from "next/image";
+import news from "./newspaper.png";
+import classes from './Header.module.css';
 
 function Header() {
   return (
-    <header>
-      <h1>
-        {" "}
-        <HighlightIcon />
+    <header className={classes.head}>
+       <h1>
+      <span ><Image src={news} height={48} width={48}></Image></span>
         NEWSROOM 101
       </h1>
     </header>

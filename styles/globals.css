@@ -44,6 +44,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.clear{
+  height: 100%;
+ 
+}
 h1{
  color: black; 
 }

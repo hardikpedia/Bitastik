@@ -5,7 +5,8 @@ import Heading from './Header'
 function NewsList(props) {
     return (
         <>
-        <Heading />
+        <div className={classes.kya}>
+        <Heading /></div>
         <ul className={classes.list}>
             {props.data.map((details) => (
                 <NewsItem
