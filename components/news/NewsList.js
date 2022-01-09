@@ -4,7 +4,7 @@ import classes from './NewsList.module.css';
 function NewsList(props) {
     return (
         <>
-        <h1>NEWSROOM 101</h1>
+        <Header />
         <ul className={classes.list}>
             {props.data.map((details) => (
                 <NewsItem

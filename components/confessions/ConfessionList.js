@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 function ConfessionList({ confessions }) {
   const [user] = useAuthState(auth)
   return (<div className="feed">
-    <div style={{ position: "sticky", bottom: "0", fontFamily: "cursive" }} >
+    <div style={{ position: "sticky", bottom: "0"}} >
       <Cheader data={user} />
     </div>
     <div className="feedWrapper">
