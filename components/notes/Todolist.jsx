@@ -51,7 +51,7 @@ function Todolist() {
 
   return (
     <div>
-      <Header />
+     <div className="bye"> <Header /></div>
       <div className="ok">
       <CreateArea onAdd={addNote} />
      

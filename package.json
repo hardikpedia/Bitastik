@@ -8,11 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@fullcalendar/daygrid": "5.7.0",
     "@fullcalendar/interaction": "5.7.0",
     "@fullcalendar/react": "5.7.0",
-    "@material-ui/core": "4.6.1",
-    "@material-ui/icons": "4.5.1",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/material": "^5.2.7",
     "@toast-ui/react-calendar": "1.0.5",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "dayz": "^2.9.1",
