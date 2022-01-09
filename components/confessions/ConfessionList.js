@@ -1,12 +1,14 @@
 import ConfessionItem from "./ConfessionItem";
 import CreateConfession from "./CreateConfession";
+import Cheader from "./Cheader";
+
 import { auth } from '../../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 function ConfessionList({ confessions }) {
   const [user] = useAuthState(auth)
   return (<div className="feed">
     <div style={{ position: "sticky", bottom: "0", fontFamily: "cursive" }} >
-      <CreateConfession data={user} />
+      <Cheader data={user} />
     </div>
     <div className="feedWrapper">
       {confessions.map((p) => (
