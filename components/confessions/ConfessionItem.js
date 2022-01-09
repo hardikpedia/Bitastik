@@ -4,27 +4,52 @@ import { format } from "timeago.js";
 import Upvote from '../../assets/upvote.png'
 import Downvote from '../../assets/downvote.png'
 
-function Confession({ confession }) {
+function Confession({ confession}) {
     const [upvoteCount, setUpvoteCount] = useState(confession.upvotes.length);
     const [isUpvoted, setIsUpvoted] = useState(false);
 
     const [downvoteCount, setDownvoteCount] = useState(confession.downvotes.length);
     const [isDownvoted, setIsDownvoted] = useState(false);
-    const [user, setUser] = useState(confession.uid);
-
-
+    // const [user, setUser] = useState(confession.uid);
     useEffect(() => {
+        const update = async () => {
+            await fetch('/api/confessions', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    _id: confession._id.toString(),
+                    uid: confession.uid,
+                    type: 'upvotes',
+                    })
+            })
+        }
         if(isUpvoted){
             setUpvoteCount(upvoteCount+1);
-            
+            update();
         }
         else{
             setUpvoteCount(upvoteCount-1);
         }
     }, [isUpvoted]);
     useEffect(() => {
+        const update = async () => {
+            await fetch('/api/confessions', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    _id: confession._id.toString(),
+                    uid: confession.uid,
+                    type: 'downvotes',
+                })
+            })
+        }
         if(isDownvoted){
             setDownvoteCount(downvoteCount+1);
+            update();
         }
         else{
             setDownvoteCount(downvoteCount-1)
@@ -40,8 +65,8 @@ function Confession({ confession }) {
     }
 
     return (
-        <div className="post">
-            <div className="postWrapper">
+        <div className="post" >
+            <div className="postWrapper" >
                 <div className="postTop">
                     <div className="postTopLeft">
                         <span className="postDate">{format(confession.createdAt)}</span>

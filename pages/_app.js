@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (user) router.push('/dashboard')
   }, [user])
+  
   return (
     <> {user ?
         <Layout>

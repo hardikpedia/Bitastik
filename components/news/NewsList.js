@@ -1,10 +1,11 @@
 import NewsItem from './NewsItem';
 import classes from './NewsList.module.css';
+import Heading from './Header'
 
 function NewsList(props) {
     return (
         <>
-        <Header />
+        <Heading />
         <ul className={classes.list}>
             {props.data.map((details) => (
                 <NewsItem

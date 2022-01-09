@@ -5,10 +5,10 @@ dbConnect();
 async function handler(req, res) {
     if (req.method === "POST") {
         try {
-            const { uid,content } = req.body;
+            const { uid, content } = req.body;
             const confession_instance = new Confession({
-                uid: uid,
-                CONTENT: content,
+                uid,
+                content,
             });
             await confession_instance.save();
             res.status(200).json({ message: "content Added", Status: "Success" });
@@ -52,11 +52,12 @@ async function handler(req, res) {
     if (req.method === "PUT") {
         try {
             const { uid, _id, type } = req.body;
-            const confession_instance =await Confession.findOne({_id:_id})
-            console.log(confession_instance);
+            const dtype = type === 'upvotes' ? 'downvotes' : 'upvotes';
+            const confession_instance = await Confession.findOne({ _id })
             confession_instance[type].push(uid);
+            confession_instance[dtype].pull(uid);
             await confession_instance.save();
-            res.status(200).json({ message: "content Added", Status: "Success" });
+            res.status(200).json({ message: "content Added", Status: "Success", _id });
         } catch (err) {
             const response = { Status: "Failure", Description: err.message };
             res.status(400).send(response);

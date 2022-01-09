@@ -7,12 +7,12 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 function ConfessionList({ confessions }) {
   const [user] = useAuthState(auth)
   return (<div className="feed">
-    <div style={{ position: "sticky", bottom: "0"}} >
+    <div>
       <Cheader data={user} />
     </div>
     <div className="feedWrapper">
-      {confessions.map((p) => (
-        <ConfessionItem confession={p} key={p.uid} />
+      {confessions.map((p,index) => (
+        <ConfessionItem index={index} confession={p} key={p.uid} />
       ))}
     </div>
    
