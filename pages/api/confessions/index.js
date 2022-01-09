@@ -10,7 +10,6 @@ async function handler(req, res) {
                 uid,
                 content,
             });
-
             await confession_instance.save();
             res.status(200).json({ message: "content Added", Status: "Success" });
         } catch (err) {
