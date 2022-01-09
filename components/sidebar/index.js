@@ -353,21 +353,7 @@ const Sidebar = () => {
                   <Text clicked={click}>Todolist</Text>
                 </Item>
               </Link>
-              <Link href="/projects">
-                <Item
-                  onClick={() => setClick(false)}
-                  activeClassName="active"
-                  to="/projects"
-                >
-                  <Image
-                    height={size}
-                    width={size}
-                    src={Projects}
-                    alt="Projects"
-                  />
-                  <Text clicked={click}>Projects</Text>
-                </Item>
-              </Link>
+             
             </SlickBar>
 
             <Profile clicked={profileClick}>

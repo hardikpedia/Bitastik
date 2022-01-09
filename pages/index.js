@@ -10,7 +10,7 @@ const Footer = dynamic(() => import('../components/footer/footer'), { ssr: false
 const HomeComponent = () => {
     return (
         <>
-            <div>
+            <div className="clear">
                 <h1>
                     <TypeIt
                         options={{
@@ -32,9 +32,10 @@ const HomeComponent = () => {
                         }}
                     />
                 </h1>
+              
             </div>
             
-            <div style={{position:"absolute",bottom:"0"}}>
+            <div style={{position:"absolute",height:"0", bottom:"0"}}>
                 <Footer />
 
             </div>
