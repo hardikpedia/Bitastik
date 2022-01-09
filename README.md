@@ -71,7 +71,6 @@ Different fun elements like the confession page.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 ### Built With
 
 This section list any major frameworks/libraries used in our project. Here are a few examples.

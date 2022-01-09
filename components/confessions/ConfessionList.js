@@ -11,8 +11,8 @@ function ConfessionList({ confessions }) {
       <Cheader data={user} />
     </div>
     <div className="feedWrapper">
-      {confessions.map((p,index) => (
-        <ConfessionItem index={index} confession={p} key={p.uid} />
+      {confessions.map((p) => (
+        <ConfessionItem  confession={p} key={p.uid} />
       ))}
     </div>
    
