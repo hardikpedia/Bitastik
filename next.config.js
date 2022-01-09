@@ -1,3 +1,12 @@
+// module.exports = {
+//   reactStrictMode: true,
+//   images: {
+//     domains: ["picsum.photos"],
+//   },
+// }
 module.exports = {
-  reactStrictMode: true,
+    reactStrictMode: true,
+  images: {
+    domains: ["picsum.photos"],
+  },
 }
