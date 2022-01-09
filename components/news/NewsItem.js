@@ -21,7 +21,7 @@ function NewsItem(props) {
                     <date>{props.date}</date>
                 </div>
                 <div className={classes.actions}>
-                    <button onClick={showDetailsHandler}>Show Details</button>
+                    {/* <button onClick={showDetailsHandler}>Show Details</button> */}
                 </div>
             </Card>
         </li>
