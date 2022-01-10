@@ -80,6 +80,7 @@ nav .search_box span:hover::after{
     width: 3rem;
     height: 3rem;
     margin-left: 0.5rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px){
