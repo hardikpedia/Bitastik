@@ -1,6 +1,6 @@
 import Document from "next/document";
 import { ServerStyleSheet } from "styled-components";
-
+import Head from 'next/head'
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: (
           <>
+          <Head>
+              <link rel="icon" href='https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png' type="image/x-icon"/>
+
+          </Head>
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>

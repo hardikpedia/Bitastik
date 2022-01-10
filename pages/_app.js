@@ -10,7 +10,8 @@ import { auth, signInWithGoogle } from '../firebase/firebase'
 import { useRouter } from 'next/router'
 import Home from '.'
 import Land from '../components/layout/Land'
-
+import Head from 'next/head'
+import Bold from '../assets/news.png'
 function MyApp({ Component, pageProps }) {
   const [user] = useAuthState(auth)
   console.log(user)
@@ -20,7 +21,13 @@ function MyApp({ Component, pageProps }) {
   }, [user])
   
   return (
-    <> {user ?
+
+    <>
+      <Head>
+        <link rel="icon" href='/bold.png' type="image/x-icon" />
+
+      </Head>
+     {user ?
         <Layout>
           <Component {...pageProps} />
         </Layout> 
