@@ -101,6 +101,7 @@ This section list any major frameworks/libraries used in our project. Here are a
 
 <h2>TEAM MENTOR</h2>
  Utkrisht sharma
+ He is the best mentor we ever had and he is super helpful and awesome ❤️
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
