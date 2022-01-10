@@ -5,7 +5,7 @@
   --black: #09090c;
   --grey: #a4b2bc;
   --white: #fff;
-  --background: rgba(137, 171, 245, 0.37);
+  --background: rgba(255, 255, 255, 0.37);
 
 
 
@@ -30,16 +30,9 @@ html {
 }
 
 body {
-  /* background-color: var(--background); */
-  font-family: "Montserrat", sans-serif;
-  /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
-
-
-
-background: #DC2424;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4A569D, #DC2424);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+   background-color: var(--background);
+  font-family: "Montserrat", sans-serif; 
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); 
 
 
   color: black;
