@@ -8,7 +8,7 @@ const  CalendarComponents=()=> {
         <div style={{
             width: '90vw',
             color: "black",
-            backgroundColor:"grey",
+            backgroundColor:"",
             padding:"20px",
             overflow:"hidden",
             // backgroundImage:`url(${Books})`
