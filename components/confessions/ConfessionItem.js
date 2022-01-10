@@ -10,7 +10,7 @@ function Confession({ confession}) {
 
     const [downvoteCount, setDownvoteCount] = useState(confession.downvotes.length);
     const [isDownvoted, setIsDownvoted] = useState(false);
-    const [user, setUser] = useState(confession.uid);
+    // const [user, setUser] = useState(confession.uid);
     useEffect(() => {
         const update = async () => {
             await fetch('/api/confessions', {
