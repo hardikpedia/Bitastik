@@ -52,13 +52,13 @@ display: none;
 .nav-menu-active{
   z-index: 1000;
 }
-.bg{
+.bgmain{
     /* background-image: url('../assets/doodle.jpg');  */
 height: 100vh;
 width: 100vw;
 position: fixed;
 opacity: 0.234;
-z-index: -1;
+z-index: -100;
 }
 .postText{
     font-family: "Nanum Pen Script", cursive;

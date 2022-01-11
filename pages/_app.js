@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <>
-    <div className='bg'> <Image src={doodle} layout='fill' objectFit='cover'/>   </div>
+    <div className='bgmain'> <Image src={doodle} layout='fill' objectFit='cover'/>   </div>
       <Head>
         <link rel="icon" href='/bold.png' type="image/x-icon" />
 
