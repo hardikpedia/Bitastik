@@ -24,6 +24,6 @@ export async function getStaticProps() {
         props: {
             confessions,
         },
-        revalidate: 60,
+        revalidate: 1,
     };
 }
