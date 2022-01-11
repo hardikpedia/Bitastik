@@ -1,35 +1,40 @@
-import {useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
 import whisper from "./love-letterrr.png";
 import secret from "./theek.png";
+import { useRouter } from 'next/router';
 
 function Cheader({ data }) {
+  const router = useRouter();
   const [value, setValue] = useState('');
-  const handleClick = async() => {
-    await fetch('/api/confessions', {
+  const handleClick = async () => {
+    const info = await fetch('/api/confessions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          content: value, uid: data.uid
-          })
+      },
+      body: JSON.stringify({
+        content: value, uid: data.uid
       })
+    })
+    router.reload()
   };
   return (
     <nav>
       <div className="icon"><span ><Image src={secret} height={48} width={48}></Image></span>CONFESSIONS</div>
       <div className="search_box">
-        <form>
-          <textarea type="search" placeholder={`What's in your mind ${data.displayName} ?`} onChange={(e) => setValue(e.target.value)}/>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+        }}>
+          <textarea type="search" placeholder={`What's in your mind ${data.displayName} ?`} onChange={(e) => setValue(e.target.value)} />
           <button type="submit" class="wow" style={{
             backgroundImage: `url(${whisper})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }}
-          onClick={handleClick}
-         />
+            onClick={handleClick}
+          />
 
         </form>
       </div>
