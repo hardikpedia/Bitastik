@@ -20,7 +20,7 @@ function Cheader({ data }) {
     <nav>
       <div className="icon"><span ><Image src={secret} height={48} width={48}></Image></span>CONFESSIONS</div>
       <div className="search_box">
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form>
           <textarea type="search" placeholder={`What's in your mind ${data.displayName} ?`} onChange={(e) => setValue(e.target.value)}/>
           <button type="submit" class="wow" style={{
             backgroundImage: `url(${whisper})`,

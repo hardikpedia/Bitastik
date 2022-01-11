@@ -16,10 +16,18 @@ function MyApp({ Component, pageProps }) {
   const [user] = useAuthState(auth)
   console.log(user)
   const router = useRouter()
+  let href = router.pathname;
+
   useEffect(() => {
-    if (user) router.push('/dashboard')
+    if (href === '/') {
+      if (user) router.push('/dashboard')
+    }
+    else {
+      if (user) router.push({ href })
+
+    }
   }, [user])
-  
+
   return (
 
     <>
@@ -27,21 +35,21 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href='/bold.png' type="image/x-icon" />
 
       </Head>
-     {user ?
+      {user ?
         <Layout>
           <Component {...pageProps} />
-        </Layout> 
-    :
-      <Land>
-        <div>
-          <Home />
-        </div>
-        <button className='button' onClick={async () => {
-          await signInWithGoogle();
-        }}><span>Login</span></button>
-      </Land>
+        </Layout>
+        :
+        <Land>
+          <div>
+            <Home />
+          </div>
+          <button className='button' onClick={async () => {
+            await signInWithGoogle();
+          }}><span>Sign In/Up</span></button>
+        </Land>
 
-    }
+      }
     </>
 
   )

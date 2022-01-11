@@ -1,5 +1,9 @@
 .main h1 {
   font-size: calc(2rem + 2vw);
+  position: relative;
+  display: block;
+  text-align: center;
+  top: 40vh;
 }
 .main body {
   font-family: "Montserrat", sans-serif;
@@ -18,15 +22,17 @@
   border: none;
   color: #ffffff;
   text-align: center;
-  font-size: 2em;
-  padding: 0.25rem;
-  width: 8rem;
+  font-size: 1.75em;
+  padding: 0.755rem;
+  width: 13rem;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
-  position: absolute;
+  margin:0.25rem;
+  right: 0;
+  position: fixed;
   top: 0;
   right: 0;
+  
 }
 
 .main button span {

@@ -9,7 +9,6 @@ const ConfessionPage = ({ confessions }) => {
     return <div style={{position:"absolute",top:"0"}}>
    
         <ConfessionList confessions={confessions} />
-
     </div>
 };
 

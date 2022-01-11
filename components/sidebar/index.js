@@ -16,7 +16,8 @@ import Hamburger from '../../assets/hamburger.png'
 import styled from "styled-components";
 import { auth, signOutFromGoogle } from '../../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-
+import { Router } from "next/router";
+import { useRouter } from "next/router";
 const Container = styled.div`
   position: fixed;
   .active {
@@ -31,14 +32,13 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: var(--black);
+  background-color:var(--black);
   border: none;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   margin: 0.5rem 0 0 0.5rem;
   cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +102,7 @@ const SlickBar = styled.ul`
   top: 3rem;
   left: 0;
   position: absolute;
-  width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};
+  width: ${(props) => (props.clicked ? "11rem" : "3.5rem")};
   transition: all 0.5s ease;
   border-radius: 0 30px 30px 0;
 `;
@@ -229,9 +229,10 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState();
   const [sidenav, setSideNav] = useState(true)
   const [btn, setBtn] = useState(false)
-
+  const router=useRouter();
   async function signOut(){
     await signOutFromGoogle();
+    router.push('/')
   }
   const [user] = useAuthState(auth)
   // console.log(user)

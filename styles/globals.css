@@ -32,7 +32,7 @@ html {
 body {
    background-color: var(--background);
   font-family: "Montserrat", sans-serif; 
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); 
+  background-image: url('../assets/doodle.jpg'); 
 
 
   color: black;
