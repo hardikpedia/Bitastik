@@ -3,7 +3,7 @@ import Image from "next/image";
 import { format } from "timeago.js";
 import Upvote from '../../assets/upvote.png'
 import Downvote from '../../assets/downvote.png'
-
+import Doom from '../../assets/doodle5.jpg'
 function Confession({ confession}) {
     const [upvoteCount, setUpvoteCount] = useState(confession.upvotes.length);
     const [isUpvoted, setIsUpvoted] = useState(false);
@@ -66,7 +66,7 @@ function Confession({ confession}) {
 
     return (
         <div className="post" >
-            <div className="bg2"></div>
+            <div className="bg2"><Image src={Doom} layout="fill" objectFit="cover"/></div>
             <div className="postWrapper" >
                 <div className="postTop">
                     <div className="postTopLeft">

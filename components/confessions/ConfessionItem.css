@@ -2,12 +2,13 @@
 
 .post {
   width: 80vw;
+  position: relative;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(56, 23, 23, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   margin: 25px auto;
-  background-color: #9c9392;
-  background-image: url("../../assets/doodle5.jpg");
+  /* background-color: #9c9392; */
+  /* background-image: url("../../assets/doodle5.jpg"); */
 
   /* background-image: url("https://www.transparenttextures.com/patterns/lined-paper-2.png"); */
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -89,4 +90,10 @@
   font-weight: 500;
   font-size: 1.8rem;
   font-family: "Nanum Pen Script", cursive;
+}
+.bg2{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
