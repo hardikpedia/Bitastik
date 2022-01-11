@@ -5,6 +5,8 @@ import '../components/calender/styles.css'
 import '../components/confessions/ConfessionItem.css'
 import '../components/confessions/Cheader.css'
 import '../components/confessions/ConfessionList'
+import doodle from '../assets/doodle.jpg'
+import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, signInWithGoogle } from '../firebase/firebase'
@@ -32,7 +34,7 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <>
-    <div className='bg'>    </div>
+    <div className='bg'> <Image src={doodle} layout='fill' objectFit='cover'/>   </div>
       <Head>
         <link rel="icon" href='/bold.png' type="image/x-icon" />
 

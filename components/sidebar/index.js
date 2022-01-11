@@ -407,7 +407,7 @@ const Sidebar = () => {
               <Details clicked={profileClick}>
                 <Name>
                   {/* <h4>Jhon&nbsp;Doe</h4> */}
-                  <h5 style={{ display: "inline" }}>{user.displayName}</h5>
+                  <h5 style={{ display: "inline" }}>{user&&user.displayName}</h5>
                   <Link href="/dashboard">view&nbsp;dashboard</Link>
                 </Name>
 
