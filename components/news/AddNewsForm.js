@@ -6,7 +6,7 @@ function AddNewsForm(props) {
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const dateInputRef = useRef();
-    const descriptionInputRef = useRef();
+    // const descriptionInputRef = useRef();
 
     function submitHandler(event) {
         event.preventDefault();
@@ -14,13 +14,13 @@ function AddNewsForm(props) {
         const enteredTitle = titleInputRef.current.value;
         const enteredImage = imageInputRef.current.value;
         const enteredDate = dateInputRef.current.value;
-        const enteredDescription = descriptionInputRef.current.value;
+        // const enteredDescription = descriptionInputRef.current.value;
 
         const NewsData = {
             title: enteredTitle,
             image: enteredImage,
             date: enteredDate,
-            description: enteredDescription,
+            // description: enteredDescription,
         };
 
         props.onAddNews(NewsData);
@@ -38,10 +38,10 @@ function AddNewsForm(props) {
                     <input type='url' required id='image' ref={imageInputRef} />
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor='date'>Date</label>
+                    <label htmlFor='date'>Description</label>
                     <input type='text' required id='date' ref={dateInputRef} />
                 </div>
-                <div className={classes.control}>
+                {/* <div className={classes.control}>
                     <label htmlFor='description'>Description</label>
                     <textarea
                         id='description'
@@ -49,7 +49,7 @@ function AddNewsForm(props) {
                         rows='5'
                         ref={descriptionInputRef}
                     ></textarea>
-                </div>
+                </div> */}
                 <div className={classes.actions}>
                     <button>Add Event</button>
                 </div>

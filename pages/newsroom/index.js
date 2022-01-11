@@ -23,7 +23,7 @@ export async function getStaticProps() {
                 date:info.date,
                 image:info.image,
                 id:info._id.toString(),
-                description:info.description
+                // description:info.description
             }))
         },
         revalidate: 60,
