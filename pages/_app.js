@@ -31,6 +31,9 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <>
+    <div className='bg'>
+
+    </div>
       <Head>
         <link rel="icon" href='/bold.png' type="image/x-icon" />
 

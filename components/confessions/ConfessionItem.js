@@ -66,6 +66,7 @@ function Confession({ confession}) {
 
     return (
         <div className="post" >
+            <div className="bg2"></div>
             <div className="postWrapper" >
                 <div className="postTop">
                     <div className="postTopLeft">
