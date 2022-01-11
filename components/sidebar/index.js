@@ -12,7 +12,8 @@ import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import downhil from "../../assets/downhil.gif";
 import News from "../../assets/news.png"
-import Hamburger from '../../assets/hamburger.png'
+import Hamburger from '../../assets/righty.png'
+import Hamburgery from '../../assets/lefty.png'
 import styled from "styled-components";
 import { auth, signOutFromGoogle } from '../../firebase/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -229,8 +230,8 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState();
   const [sidenav, setSideNav] = useState(true)
   const [btn, setBtn] = useState(false)
-  const router=useRouter();
-  async function signOut(){
+  const router = useRouter();
+  async function signOut() {
     await signOutFromGoogle();
     router.push('/')
   }
@@ -264,11 +265,49 @@ const Sidebar = () => {
 
   function showSideNav() {
     setSideNav(!sidenav);
+    if (!sidenav) {
+      setTogi({
+        position: "fixed",
+        bottom: "50%",
+        zIndex: "100",
+        left: "15%",
+        backgroundColor: "black",
+        borderRadius: "0 50% 50% 0",
+        padding: "0.3rem",
+        opacity: "0.7"
+
+      })
+    }
+    else {
+      setTogi({
+        position: "fixed",
+        bottom: "50%",
+        zIndex: "100",
+        left: "0%",
+        backgroundColor: "black",
+        borderRadius: "0 50% 50% 0",
+        padding: "0.3rem",
+        opacity: "0.7"
+
+      })
+    }
+
   }
+
+  const [togi, setTogi] = useState({
+    position: "fixed",
+    bottom: "50%",
+    zIndex: "100",
+    left: "0%",
+    backgroundColor: "black",
+    borderRadius: "0 50% 50% 0",
+    padding: "0.5rem",
+    opacity: "0.7"
+  })
   const size = 24;
   return (
     <>
-      <div style={{position :"fixed",bottom:"0",zIndex:"100"}}>
+      <div className="togi" style={togi}>
         {btn ? <div>
           <Image
             src={Hamburger}
@@ -354,7 +393,7 @@ const Sidebar = () => {
                   <Text clicked={click}>Todolist</Text>
                 </Item>
               </Link>
-             
+
             </SlickBar>
 
             <Profile clicked={profileClick}>
@@ -368,7 +407,7 @@ const Sidebar = () => {
               <Details clicked={profileClick}>
                 <Name>
                   {/* <h4>Jhon&nbsp;Doe</h4> */}
-                  <h5 style={{display:"inline"}}>{user.displayName}</h5>
+                  <h5 style={{ display: "inline" }}>{user.displayName}</h5>
                   <Link href="/dashboard">view&nbsp;dashboard</Link>
                 </Name>
 

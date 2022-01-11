@@ -28,7 +28,7 @@ const HomeComponent = () => {
     return (
         <>
        
-            <div style={{ position: "fixed", userSelect: "none",fontSize:"2rem"}}>Waitt...you expected a boring dashboard? Just hold the cursor and Happy Drawing!!! ❤️:/</div>
+            <div style={{ position: "fixed", userSelect: "none",fontSize:"1.3rem"}}>Waitt...you expected a boring dashboard? LOL just hold the cursor and Happy Drawing!!! ❤️:/</div>
             <ReactSketchCanvas
                 style={styles}
                 width="100%"

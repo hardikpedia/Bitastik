@@ -35,7 +35,7 @@ const HomeComponent = () => {
               
             </div>
             
-            <div style={{position:"absolute",height:"0", bottom:"0"}}>
+            <div style={{height:"",bottom:"0",display:"flex",overflow:"clip"}}>
                 <Footer />
 
             </div>

@@ -20,7 +20,7 @@ export default function ReactBigCalendar() {
         defaultDate={new Date()}
         defaultView="day"
         events={eventsData}
-        style={{ height: "80vh" ,color:"black"}}
+        style={{ height: "80vh" ,color:"white"}}
         // onSelectEvent={(event) => alert(event.title)}
 
       />
