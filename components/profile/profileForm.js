@@ -52,7 +52,7 @@ function profileForm(props) {
         <div className={Classes.prWrap}>
             <h3>Try to Fill all the Data</h3>
             <form className={Classes.prForm}>
-             
+
                 <input
                     className={Classes.prInput}
                     value={roll}
@@ -60,6 +60,15 @@ function profileForm(props) {
                     placeholder="Roll no i.e BTECH/xxxxx/xx"
                     type="email"
                     name="roll"
+                    required
+                />
+                <input
+                    className={Classes.prInput}
+                    value={image}
+                    onChange={e => updateFormData(e)}
+                    placeholder="image"
+                    type="email"
+                    name="email"
                     required
                 />
                 <input
@@ -80,7 +89,7 @@ function profileForm(props) {
                     name="linkedIn"
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={insta}
                     onChange={e => updateFormData(e)}
@@ -89,8 +98,8 @@ function profileForm(props) {
                     name="insta"
                     required
                 />
-               
-               <textarea
+
+                <textarea
                     className={Classes.prInputt}
                     value={bio}
                     onChange={e => updateFormData(e)}
@@ -99,8 +108,8 @@ function profileForm(props) {
                     name="bio"
                     required
                 />
-               
-               <input
+
+                <input
                     className={Classes.prInput}
                     value={branch}
                     onChange={e => updateFormData(e)}
@@ -109,7 +118,7 @@ function profileForm(props) {
                     name="branch"
                     required
                 />
-                  <input
+                <input
                     className={Classes.prInput}
                     value={yearofgraduation}
                     onChange={e => updateFormData(e)}
@@ -118,7 +127,7 @@ function profileForm(props) {
                     name="yearofgraduation"
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={hostel}
                     onChange={e => updateFormData(e)}
@@ -127,7 +136,7 @@ function profileForm(props) {
                     name="hostel"
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={room}
                     onChange={e => updateFormData(e)}
@@ -145,10 +154,7 @@ function profileForm(props) {
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     required
                 />
-               
-               
-
-                <button className={Classes.prButton} type="submit">Submit</button>
+                <button className={Classes.prButton} onClick={submitHandler}>Submit</button>
             </form>
         </div>
 
