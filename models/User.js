@@ -7,6 +7,9 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
+    roll:{
+      type:String,
+    },
     isAdmin: {
       type: Boolean,
       default: false,

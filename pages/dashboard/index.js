@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import * as React from 'react';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import  background from '../../assets/background.jpg'
-
+import ProfilePage from '../../components/profile/profilePage'
 const HomeComponent = () => {
     // const [data, setData] = useState({})
 
@@ -28,7 +28,7 @@ const HomeComponent = () => {
     return (
         <>
        
-            <div style={{ position: "fixed", userSelect: "none",fontSize:"1.3rem"}}>Waitt...you expected a boring dashboard? LOL just hold the cursor and Happy Drawing!!! ❤️:/</div>
+            {/* <div style={{ position: "fixed", userSelect: "none",fontSize:"1.3rem"}}>Waitt...you expected a boring dashboard? LOL just hold the cursor and Happy Drawing!!! ❤️:/</div>
             <ReactSketchCanvas
                 style={styles}
                 width="100%"
@@ -36,7 +36,8 @@ const HomeComponent = () => {
                 strokeWidth={4}
                 strokeColor="black"
                 backgroundImage={background}
-            />
+            /> */}
+        <ProfilePage/>
         </>
 
     )
