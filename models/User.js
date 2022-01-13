@@ -7,48 +7,43 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    username: {
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    insta:{
+      type:String,
+      unique:true,
+    },
+    linkedIn:{
+      type:String,
+      unique:true,
+    },
+    github:{
+      type:String,
+      unique:true,
+    },
+    bio: {
+      type: String,
+      max: 500,
+    },
+    branch: {
       type: String,
       required: true,
-      min: 3,
-      max: 20,
-      unique: true,
     },
-    email: {
-      type: String,
+    yearofgraduation: {
+      type: Number,
       required: true,
-      max: 50,
-      unique: true,
     },
-    // password: {
-    //   type: String,
-    //   required: true,
-    //   min: 6,
-    // },
-    // profilePicture: {
-    //   type: String,
-    //   default: "",
-    // },
-    // coverPicture: {
-    //   type: String,
-    //   default: "",
-    // },
-    // isAdmin: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-    // desc: {
-    //   type: String,
-    //   max: 50,
-    // },
-    // branch: {
-    //   type: String,
-    //   required: true,
-    // },
-    // yearofgraduation: {
-    //   type: Number,
-    //   required: true,
-    // },
+    hostel:{
+      type:Number,
+    },
+    room:{
+      type:Number
+    },
+    phone:{
+      type:String,
+    }
   },
 );
 
