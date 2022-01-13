@@ -1,7 +1,7 @@
 import ProfileForm from '../../../components/profile/profileForm'
 function UserProfile(){
     return(
-        <div style={{overflow:"scroll"}}>
+        <div>
         <ProfileForm />
         </div>
     )
