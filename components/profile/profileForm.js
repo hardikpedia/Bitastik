@@ -47,6 +47,7 @@ function profileForm(props) {
         event.preventDefault();
    
     }
+
     return (
         <div className={Classes.prWrap}>
             <h3>Try to Fill all the Data</h3>
@@ -58,7 +59,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Roll no i.e BTECH/xxxxx/xx"
                     type="email"
-                    name="email"
+                    name="roll"
                     required
                 />
                 <input
@@ -76,7 +77,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Github Profile Link"
                     type="url"
-                    name=""
+                    name="github"
                     required
                 />
                 <input
@@ -85,7 +86,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="linkedIn Profile Link"
                     type="url"
-                    name=""
+                    name="linkedIn"
                     required
                 />
                 <input
@@ -94,7 +95,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Insta Profile Link"
                     type="url"
-                    name=""
+                    name="insta"
                     required
                 />
 
@@ -104,7 +105,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Say something about yourself..."
                     type="url"
-                    name=""
+                    name="bio"
                     required
                 />
 
@@ -114,7 +115,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Branch"
                     type="text"
-                    name=""
+                    name="branch"
                     required
                 />
                 <input
@@ -123,7 +124,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Year Of Graduation"
                     type="number"
-                    name=""
+                    name="yearofgraduation"
                     required
                 />
                 <input
@@ -132,7 +133,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Hostel Number"
                     type="number"
-                    name=""
+                    name="hostel"
                     required
                 />
                 <input
@@ -141,7 +142,7 @@ function profileForm(props) {
                     onChange={e => updateFormData(e)}
                     placeholder="Room Number"
                     type="number"
-                    name=""
+                    name="room"
                     required
                 />
                 <input

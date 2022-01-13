@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styles/globals.css'
 import '../components/notes/styles.css'
-import '../components/calender/styles.css'
+// import '../components/calender/styles.css'
 import '../components/confessions/ConfessionItem.css'
 import '../components/confessions/Cheader.css'
 import '../components/confessions/ConfessionList'
