@@ -1,32 +1,52 @@
 import { useState } from 'react'
 import Classes from './profileForm.module.css'
-function profileForm() {
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
+function profileForm(props) {
+    const [user] = useAuthState(auth);
+
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
+        uid: user.uid,
         roll: "",
+        image: "",
         github: "",
-        linkedIn:"",
-        insta:"",
-        bio:"",
+        linkedIn: "",
+        insta: "",
+        bio: "",
         branch: "",
-          yearofgraduation: "",
-          hostel:"",
-          room:"",
-          phone:""
+        yearofgraduation: "",
+        hostel: "",
+        room: "",
+        phone: ""
     });
 
-    const updateFormData = event =>
+    function updateFormData(event) {
+        const { name, value } = event.target;
+        setFormData(() => {
+            return {
+                [name]: value
+            }
+        })
+    }
+    function submitHandler(event){
+        props.onAdd(formData)
         setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        });
-
-    const { firstName, lastName, roll, github,linkedIn,insta, bio, branch,
-    yearofgraduation,
-    hostel,
-    room,
-    phone} = formData;
+            uid: user.uid,
+            roll: "",
+            image: "",
+            github: "",
+            linkedIn: "",
+            insta: "",
+            bio: "",
+            branch: "",
+            yearofgraduation: "",
+            hostel: "",
+            room: "",
+            phone: ""
+        })
+        event.preventDefault();
+   
+    }
 
     return (
         <div className={Classes.prWrap}>
@@ -39,7 +59,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Roll no i.e BTECH/xxxxx/xx"
                     type="email"
-                    name="email"
+                    name="roll"
                     required
                 />
                 <input
@@ -48,7 +68,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Github Profile Link"
                     type="url"
-                    name=""
+                    name="github"
                     required
                 />
                 <input
@@ -57,7 +77,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="linkedIn Profile Link"
                     type="url"
-                    name=""
+                    name="linkedIn"
                     required
                 />
                  <input
@@ -66,7 +86,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Insta Profile Link"
                     type="url"
-                    name=""
+                    name="insta"
                     required
                 />
                
@@ -76,7 +96,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Say something about yourself..."
                     type="url"
-                    name=""
+                    name="bio"
                     required
                 />
                
@@ -86,7 +106,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Branch"
                     type="text"
-                    name=""
+                    name="branch"
                     required
                 />
                   <input
@@ -95,7 +115,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Year Of Graduation"
                     type="number"
-                    name=""
+                    name="yearofgraduation"
                     required
                 />
                  <input
@@ -104,7 +124,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Hostel Number"
                     type="number"
-                    name=""
+                    name="hostel"
                     required
                 />
                  <input
@@ -113,7 +133,7 @@ function profileForm() {
                     onChange={e => updateFormData(e)}
                     placeholder="Room Number"
                     type="number"
-                    name=""
+                    name="room"
                     required
                 />
                 <input

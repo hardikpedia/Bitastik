@@ -12,7 +12,7 @@ export default function ReactBigCalendar() {
   const [eventsData, setEventsData] = useState(events);
 
   return (
-    <div className="App">
+    
       <Calendar
         views={["day", "agenda", "work_week", "month"]}
         selectable
@@ -20,10 +20,10 @@ export default function ReactBigCalendar() {
         defaultDate={new Date()}
         defaultView="day"
         events={eventsData}
-        style={{ height: "80vh" ,color:"white"}}
+        style={{ height: "80vh" ,color:"black"}}
         // onSelectEvent={(event) => alert(event.title)}
 
       />
-    </div>
+   
   );
 }
