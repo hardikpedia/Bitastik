@@ -1,43 +1,71 @@
 import { useState } from 'react'
 import Classes from './profileForm.module.css'
-function profileForm() {
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
+function profileForm(props) {
+    const [user] = useAuthState(auth);
+
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
+        uid: user.uid,
         roll: "",
+        image: "",
         github: "",
-        linkedIn:"",
-        insta:"",
-        bio:"",
+        linkedIn: "",
+        insta: "",
+        bio: "",
         branch: "",
-          yearofgraduation: "",
-          hostel:"",
-          room:"",
-          phone:""
+        yearofgraduation: "",
+        hostel: "",
+        room: "",
+        phone: ""
     });
 
-    const updateFormData = event =>
+    function updateFormData(event) {
+        const { name, value } = event.target;
+        setFormData(() => {
+            return {
+                [name]: value
+            }
+        })
+    }
+    function submitHandler(event){
+        props.onAdd(formData)
         setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        });
-
-    const { firstName, lastName, roll, github,linkedIn,insta, bio, branch,
-    yearofgraduation,
-    hostel,
-    room,
-    phone} = formData;
-
+            uid: user.uid,
+            roll: "",
+            image: "",
+            github: "",
+            linkedIn: "",
+            insta: "",
+            bio: "",
+            branch: "",
+            yearofgraduation: "",
+            hostel: "",
+            room: "",
+            phone: ""
+        })
+        event.preventDefault();
+   
+    }
     return (
         <div className={Classes.prWrap}>
             <h3>Try to Fill all the Data</h3>
             <form className={Classes.prForm}>
-             
+
                 <input
                     className={Classes.prInput}
                     value={roll}
                     onChange={e => updateFormData(e)}
                     placeholder="Roll no i.e BTECH/xxxxx/xx"
+                    type="email"
+                    name="email"
+                    required
+                />
+                <input
+                    className={Classes.prInput}
+                    value={image}
+                    onChange={e => updateFormData(e)}
+                    placeholder="image"
                     type="email"
                     name="email"
                     required
@@ -60,7 +88,7 @@ function profileForm() {
                     name=""
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={insta}
                     onChange={e => updateFormData(e)}
@@ -69,8 +97,8 @@ function profileForm() {
                     name=""
                     required
                 />
-               
-               <textarea
+
+                <textarea
                     className={Classes.prInputt}
                     value={bio}
                     onChange={e => updateFormData(e)}
@@ -79,8 +107,8 @@ function profileForm() {
                     name=""
                     required
                 />
-               
-               <input
+
+                <input
                     className={Classes.prInput}
                     value={branch}
                     onChange={e => updateFormData(e)}
@@ -89,7 +117,7 @@ function profileForm() {
                     name=""
                     required
                 />
-                  <input
+                <input
                     className={Classes.prInput}
                     value={yearofgraduation}
                     onChange={e => updateFormData(e)}
@@ -98,7 +126,7 @@ function profileForm() {
                     name=""
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={hostel}
                     onChange={e => updateFormData(e)}
@@ -107,7 +135,7 @@ function profileForm() {
                     name=""
                     required
                 />
-                 <input
+                <input
                     className={Classes.prInput}
                     value={room}
                     onChange={e => updateFormData(e)}
@@ -125,10 +153,7 @@ function profileForm() {
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     required
                 />
-               
-               
-
-                <button className={Classes.prButton} type="submit">Submit</button>
+                <button className={Classes.prButton} onClick={submitHandler}>Submit</button>
             </form>
         </div>
 
