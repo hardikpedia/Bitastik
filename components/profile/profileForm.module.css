@@ -1,10 +1,19 @@
 
+
 .prForm {
   font-family: sans-serif;
   display: flex;
   text-align: center;
   align-items: center;
   flex-direction: column;
+  
+ 
+}
+
+.prForm > * {
+  box-sizing: border-box;
+  line-height: 0.5;
+  align-self: flex-start;
 }
 
 .prInput{
@@ -17,6 +26,8 @@
   border-style: none;
   border: 1px solid #e4e6e8;
   transition: 0.1s ease;
+  
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
 .prInput:hover {
@@ -39,8 +50,22 @@
 
 .prWrap{
     text-align: center;
+   position: fixed;
+    top:0;
+ 
+
     /* justify-content: center; */
     /* align-items: center; */
     /* margin: auto; */
 
+}
+
+.prInputt {
+ min-width:95%;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+  height:75px;
 }
