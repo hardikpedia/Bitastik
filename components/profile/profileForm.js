@@ -19,11 +19,11 @@ function profileForm(props) {
         room: "",
         phone: ""
     });
-
     function updateFormData(event) {
-        const { name, value } = event.target;
-        setFormData(() => {
+        const { name, value }= event.target;
+        setFormData((prevValue) => {
             return {
+                ...prevValue,
                 [name]: value
             }
         })
@@ -45,7 +45,6 @@ function profileForm(props) {
             phone: ""
         })
         event.preventDefault();
-   
     }
 
     return (
@@ -55,7 +54,7 @@ function profileForm(props) {
 
                 <input
                     className={Classes.prInput}
-                    value={roll}
+                    value={formData.roll}
                     onChange={e => updateFormData(e)}
                     placeholder="Roll no i.e BTECH/xxxxx/xx"
                     type="email"
@@ -64,16 +63,16 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={image}
+                    value={formData.image}
                     onChange={e => updateFormData(e)}
                     placeholder="image"
-                    type="email"
-                    name="email"
+                    type="url"
+                    name="image"
                     required
                 />
                 <input
                     className={Classes.prInput}
-                    value={github}
+                    value={formData.github}
                     onChange={e => updateFormData(e)}
                     placeholder="Github Profile Link"
                     type="url"
@@ -82,7 +81,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={linkedIn}
+                    value={formData.linkedIn}
                     onChange={e => updateFormData(e)}
                     placeholder="linkedIn Profile Link"
                     type="url"
@@ -91,7 +90,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={insta}
+                    value={formData.insta}
                     onChange={e => updateFormData(e)}
                     placeholder="Insta Profile Link"
                     type="url"
@@ -101,7 +100,7 @@ function profileForm(props) {
 
                 <textarea
                     className={Classes.prInputt}
-                    value={bio}
+                    value={formData.bio}
                     onChange={e => updateFormData(e)}
                     placeholder="Say something about yourself..."
                     type="url"
@@ -111,7 +110,7 @@ function profileForm(props) {
 
                 <input
                     className={Classes.prInput}
-                    value={branch}
+                    value={formData.branch}
                     onChange={e => updateFormData(e)}
                     placeholder="Branch"
                     type="text"
@@ -120,7 +119,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={yearofgraduation}
+                    value={formData.yearofgraduation}
                     onChange={e => updateFormData(e)}
                     placeholder="Year Of Graduation"
                     type="number"
@@ -129,7 +128,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={hostel}
+                    value={formData.hostel}
                     onChange={e => updateFormData(e)}
                     placeholder="Hostel Number"
                     type="number"
@@ -138,7 +137,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={room}
+                    value={formData.room}
                     onChange={e => updateFormData(e)}
                     placeholder="Room Number"
                     type="number"
@@ -147,7 +146,7 @@ function profileForm(props) {
                 />
                 <input
                     className={Classes.prInput}
-                    value={phone}
+                    value={formData.phone}
                     onChange={e => updateFormData(e)}
                     placeholder="Phone Number"
                     type="tel" name="phone"

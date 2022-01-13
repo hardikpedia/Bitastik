@@ -84,7 +84,7 @@ h1.firstName {
   animation: titleEffect 1s cubic-bezier(0,0.2,0.4,1);
   top: -115px;
   left: -85px;
-} 
+ } 
 
 h1.secondName {
   animation: titleEffect 1s cubic-bezier(0,0,0.3,1);

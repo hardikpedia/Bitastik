@@ -3,22 +3,23 @@ import dbConnect from "../../../lib/dbconnect";
 dbConnect();
 
 async function handler(req, res) {
+
     if (req.method === "POST") {
         try {
             const { uid, roll, image, github, linkedIn, insta, bio, branch, yearofgraduation, hostel, room, phone } = req.body;
             const User_instance = new User({
-                uid:uid,
-                roll:roll,
-                image:image,
-                github:github,
-                linkedIn:linkedIn,
-                insta:insta,
-                bio:bio,
-                branch:branch,
-                yearofgraduation:yearofgraduation,
-                hostel:hostel,
-                room:room,
-                phone:phone
+                uid: uid,
+                roll: roll,
+                image: image,
+                github: github,
+                linkedIn: linkedIn,
+                insta: insta,
+                bio: bio,
+                branch: branch,
+                yearofgraduation: yearofgraduation,
+                hostel: hostel,
+                room: room,
+                phone: phone
 
             });
             await User_instance.save();
@@ -29,14 +30,14 @@ async function handler(req, res) {
         }
     }
     if (req.method === "GET") {
+        const { uid } = req.query;
         try {
             console.log("hello world");
-            const { uid } = req.body;
-            const todo_instance = await Todo.find({ uid });
+            const user_instance = await User.findOne({ uid });
             res.status(200).json({
-                message: "All Todos of the particular user fetched",
+                message: "All User  fetched",
                 Status: "Success",
-                todos: todo_instance,
+                users: user_instance,
             });
         } catch (err) {
             const response = { Status: "Failure", Description: err.message };

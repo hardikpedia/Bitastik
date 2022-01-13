@@ -1,8 +1,18 @@
 import ProfileForm from '../../../components/profile/profileForm'
-function UserProfile(){
-    return(
+
+function UserProfile() {
+    async function addData(data) {
+        await fetch("/api/profile", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+    }
+    return (
         <div>
-        <ProfileForm />
+            <ProfileForm onAdd={addData} />
         </div>
     )
 }
