@@ -1,14 +1,17 @@
 import ProfileCard from "./profileCard";
-
 function ProfileList({ data }) {
+ 
     return (
         <>
-            {data.map((information) => {
-                return (
-                    <ProfileCard key={information.uid} info={information} />
+            <div style={{display:"flex",flexDirection:"column"}}>
+                {data.map((information) => {
+                    return (
+                        <ProfileCard key={information.uid} info={information} />
 
-                )
-            })}
+                    )
+                })}
+            </div>
+
         </>
 
     )
