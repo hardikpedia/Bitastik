@@ -1,9 +1,24 @@
 import dbConnect from "../../lib/dbconnect";
 import User from '../../models/User'
 import ProfileList from "../../components/profile/profileList";
+import { useState } from 'react'
+import Dropdownbtn from "../../components/profile/dropdownbtn";
 function BitPage(props) {
+    const [userData, setUserData] = useState(props.userData);
+    function filterData() {
+        // console.log(name);
+        const newData = userData.filter((info) => {
+            return info.branch === "CSE";
+        })
+        setUserData(newData)
+    }
     return (
-        <ProfileList data={props.userData}/>
+        <>
+            {/* <button style={{ color: "red", position: "fixed", right: "0", top: "0" }} onClick={filterData}>Filter</button> */}
+          <Dropdownbtn onSelect={filterData}/>
+            <ProfileList data={userData} />
+        </>
+
     )
 }
 
@@ -17,8 +32,8 @@ export async function getStaticProps() {
         props: {
             userData: data.map((info) => ({
                 uid: info.uid,
-                username:info.username,
-                email:info.email,
+                username: info.username,
+                email: info.email,
                 roll: info.roll,
                 insta: info.insta,
                 linkedIn: info.linkedIn,
