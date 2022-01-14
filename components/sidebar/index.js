@@ -8,7 +8,9 @@ import Home from "../../assets/home-solid.svg";
 import Team from "../../assets/social.svg";
 import Calender from "../../assets/sceduled.svg";
 import Projects from "../../assets/starred.svg";
+import White from '../../assets/white-board.png'
 import Documents from "../../assets/draft.svg";
+import Bitian from '../../assets/marketing.png'
 import PowerOff from "../../assets/power-off-solid.svg";
 import downhil from "../../assets/downhil.gif";
 import News from "../../assets/news.png"
@@ -100,7 +102,7 @@ const SlickBar = styled.ul`
   z-index: 100;
   margin: 3rem 0 auto 0;
 
-  top: 3rem;
+  /* top: 3rem; */
   left: 0;
   position: absolute;
   width: ${(props) => (props.clicked ? "11rem" : "3.5rem")};
@@ -338,6 +340,17 @@ const Sidebar = () => {
                   <Text clicked={click}>Dashboard</Text>
                 </Item>
               </Link>
+              <Link href="/bitians">
+                <Item
+                  onClick={() => setClick(false)}
+                  exact
+                  activeClassName="active"
+                  to="/bitians"
+                >
+                  <Image height={size} width={size} src={Bitian} alt="Bitians" />
+                  <Text clicked={click}>BITians</Text>
+                </Item>
+              </Link>
               <Link href="/confessions">
                 <Item
                   onClick={() => setClick(false)}
@@ -391,6 +404,21 @@ const Sidebar = () => {
                     alt="Documents"
                   />
                   <Text clicked={click}>Todolist</Text>
+                </Item>
+              </Link>
+              <Link href="/whiteboard">
+                <Item
+                  onClick={() => setClick(false)}
+                  activeClassName="active"
+                  to="/whiteboard"
+                >
+                  <Image
+                    height={size}
+                    width={size}
+                    src={White}
+                    alt="Whiteboard"
+                  />
+                  <Text clicked={click}>Whiteboard</Text>
                 </Item>
               </Link>
 

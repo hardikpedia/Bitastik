@@ -6,7 +6,7 @@ function ProfileCard({ info}) {
             <div className={Classes.profileBg}></div>
             <section className={Classes.container}>
                 <aside className={Classes.profileImage}>
-                    {/* <Image src= layout='fill' /> */}
+                    {/* <Image src={info.}/> */}
                     <a className={Classes.camera} href="#">
                         <i class="fas fa-camera"></i>
                     </a>
