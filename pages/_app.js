@@ -45,6 +45,7 @@ function MyApp({ Component, pageProps }) {
         </Layout>
         :
         <Land>
+          
           <div>
             <Home />
           </div>

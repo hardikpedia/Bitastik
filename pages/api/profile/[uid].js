@@ -6,9 +6,11 @@ async function handler(req, res) {
 
     if (req.method === "POST") {
         try {
-            const { uid, roll, image, github, linkedIn, insta, bio, branch, yearofgraduation, hostel, room, phone } = req.body;
+            const { uid, roll,username,email, image, github, linkedIn, insta, bio, branch, yearofgraduation, hostel, room, phone } = req.body;
             const User_instance = new User({
                 uid: uid,
+                username:username,
+                email:email,
                 roll: roll,
                 image: image,
                 github: github,

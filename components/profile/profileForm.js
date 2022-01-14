@@ -7,6 +7,8 @@ function profileForm(props) {
 
     const [formData, setFormData] = useState({
         uid: user.uid,
+        username:user.displayName,
+        email:user.email,
         roll: "",
         image: "",
         github: "",
@@ -32,6 +34,8 @@ function profileForm(props) {
         props.onAdd(formData)
         setFormData({
             uid: user.uid,
+            username: user.displayName,
+            email: user.email,
             roll: "",
             image: "",
             github: "",
