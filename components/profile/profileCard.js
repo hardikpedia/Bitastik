@@ -1,4 +1,8 @@
 import Classes from './profileCard.module.css'
+import link from '../../assets/link.png'
+import insta from '../../assets/insta.png'
+import git from '../../assets/git.png'
+import Image from "next/image"
 function ProfileCard({ info}) {
     console.log(info);
     return (
@@ -13,7 +17,7 @@ function ProfileCard({ info}) {
                 </aside>
                 <section className={Classes.profileInfo}>
                     <h1 className={Classes.firstName}>{info.username}</h1>
-                    {/* <h1 className={Classes.secondName}>Yun He</h1> */}
+                    <h2 className={Classes.secondName}>{info.branch}</h2>
                     <h2>ABOUT</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tempora quaerat! Dignissimos maiores aspernatur, nam modi natus alias adipisci nesciunt, tenetur illo a, asperiores sequi. Eum non nisi aliquam nostrum!
@@ -21,13 +25,13 @@ function ProfileCard({ info}) {
 
                     <aside className={Classes.socialMediaIcons}>
                         <a href="https://twitter.com/zephybite" target="_blank">
-                            <i class="fab fa-twitter"></i>
+                        <span ><Image src={link} height={48} width={48}/></span>
                         </a>
                         <a href="https://codepen.io/zephyo" target="_blank">
-                            <i class="fab fa-codepen"></i>
+                        <span ><Image src={insta} height={48} width={48}/></span>
                         </a>
                         <a href="https://github.com/zephyo" target="_blank">
-                            <i class="fab fa-github"></i>
+                        <span ><Image src={git} height={48} width={48}/></span>
                         </a>
                         <a href="https://medium.com/@zephyo" target="_blank">
                             <i class="fab fa-medium"></i>
@@ -38,9 +42,9 @@ function ProfileCard({ info}) {
             <section className={Classes.statistics}>
                 <button class="icon arrow left"></button>
                 <button class="icon arrow right"></button>
-                <p><strong>29</strong> Followers</p>
-                <p><strong>184</strong> Following</p>
-                <p><strong>6</strong> Likes</p>
+                <p>Hostel<strong>29</strong> </p>
+                <p>Room<strong>184</strong> </p>
+                <p>YoG<strong>2024</strong> </p>
             </section>
             <button class="icon close"></button>
         </main >
