@@ -2,9 +2,10 @@ import { useState } from 'react'
 import Classes from './profileForm.module.css'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
+import {useRouter} from 'next/router'
 function profileForm(props) {
     const [user] = useAuthState(auth);
-
+    const router=useRouter()
     const [formData, setFormData] = useState({
         uid: user.uid,
         username:user.displayName,
@@ -31,7 +32,7 @@ function profileForm(props) {
             }
         })
     }
-    function submitHandler(event){
+     async function submitHandler(event){
         props.onAdd(formData)
         setFormData({
             uid: user.uid,
@@ -51,6 +52,9 @@ function profileForm(props) {
             phone: ""
         })
         event.preventDefault();
+
+        await router.push('/dashboard')
+        router.reload('/dashboard')
     }
 
     return (

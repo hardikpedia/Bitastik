@@ -3,10 +3,13 @@ import Image from "next/image";
 import whisper from "./love-letterrr.png";
 import secret from "./theek.png";
 import { useRouter } from 'next/router';
+import { auth } from "../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-function Cheader({ data }) {
+function Cheader({ setConf }) {
   const router = useRouter();
   const [value, setValue] = useState('');
+  const [data] = useAuthState(auth);
   const handleClick = async () => {
     const info = await fetch('/api/confessions', {
       method: 'POST',
@@ -17,7 +20,9 @@ function Cheader({ data }) {
         content: value, uid: data.uid
       })
     })
-    router.reload()
+    const res = await fetch('/api/confessions')
+    const { confessions } = await res.json()
+    setConf(confessions)
   };
   return (
     <nav>

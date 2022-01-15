@@ -7,13 +7,12 @@ async function handler(req, res) {
     if (req.method === "POST") {
         try {
             const { uid, roll,username,email, image, github, linkedIn, insta, bio, branch, yearofgraduation, hostel, room, phone } = req.body;
-            const User_instance = new User({
+            const User_instance = await User.updateOne({uid:uid},{
                 uid: uid,
                 username:username,
                 image:image,
                 email:email,
                 roll: roll,
-                image: image,
                 github: github,
                 linkedIn: linkedIn,
                 insta: insta,
@@ -24,8 +23,7 @@ async function handler(req, res) {
                 room: room,
                 phone: phone
 
-            });
-            await User_instance.save();
+            },{upsert:true});
             res.status(200).json({ message: "user Added", Status: "Success" });
         } catch (err) {
             const response = { Status: "Failure", Description: err.message };

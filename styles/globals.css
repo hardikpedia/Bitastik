@@ -64,6 +64,32 @@ z-index: -100;
     font-family: "Nanum Pen Script", cursive;
 
 }
+.tri{
+  font-family: "Montserrat", sans-serif; 
+  background-color: #000000; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  margin: 0.5rem;
+  z-index: 2200000;
+}
+.tri span{
+  margin-top:0.5rem ;
+}
+.tri:hover{
+  background-color: #887374;;
+  color: rgb(0, 0, 0);
+}
+
 /* news cards */
 /* 
 .card_main .cards {

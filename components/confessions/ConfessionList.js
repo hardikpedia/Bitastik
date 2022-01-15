@@ -1,25 +1,26 @@
 import ConfessionItem from "./ConfessionItem";
 import CreateConfession from "./CreateConfession";
 import Cheader from "./Cheader";
-
-import { auth } from '../../firebase/firebase'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useState } from "react";
+import { auth } from "../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 function ConfessionList({ confessions }) {
-  const [user] = useAuthState(auth)
-  return (<div className="feed">
-    <div>
-      <Cheader data={user} />
+  const [user] = useAuthState(auth);
+  const [conf, setConf] = useState(confessions);
+  return (
+    <div className="feed">
+      <div>
+        <Cheader setConf={setConf} />
+      </div>
+      <div className="feedWrapper">
+        {conf.map((p, index) => (
+          <ConfessionItem index={index} confession={p} key={p.uid} />
+        ))}
+      </div>
     </div>
-    <div className="feedWrapper">
-      {confessions.map((p,index) => (
-        <ConfessionItem index={index} confession={p} key={p.uid} />
-      ))}
-    </div>
-   
-  </div>)
+  );
 }
 export default ConfessionList;
-
 
 // export async function getStaticProps() {
 //   await dbConnect()
