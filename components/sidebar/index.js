@@ -306,7 +306,7 @@ const Sidebar = () => {
     padding: "0.5rem",
     opacity: "0.7"
   })
-  const size = 24;
+  const size = 20;
   return (
     <>
       <div className="togi" style={togi}>
