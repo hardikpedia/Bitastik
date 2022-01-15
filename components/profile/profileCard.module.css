@@ -38,13 +38,21 @@
   animation-fill-mode: both;
   position: relative;
   border-radius: 10px;
-  box-shadow: 0 25px 45px -20px rgba(255, 0, 47, 0.55),
-    inset 0 0px 120px rgba(255, 0, 47, 0.75);
+  /* box-shadow: 0 25px 45px -20px rgba(255, 0, 47, 0.55),
+    inset 0 0px 120px rgba(255, 0, 47, 0.75); */
   width: 45%;
+  
   flex: none;
   background-image: url("https://zephyo.github.io/22Days/code/3/graphics/profile.png");
   background-size: cover;
   background-position: center;
+}
+.image {
+  
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
 }
 
 .profilemage::before {
@@ -92,6 +100,8 @@ h2.secondName {
   left: -45px; */
   top: -115px;
   left: -85px;
+  
+  margin-bottom: 10%;
 }
 
 .profileInfo h2 {
@@ -199,8 +209,8 @@ h2.secondName {
     flex-direction: column;
   }
   .profileImage {
-    height: 40%;
-    width: calc(100% - 90px);
+    height: 100%;
+    width: 60%;
   }
   .profileBg {
     width: 100%;
