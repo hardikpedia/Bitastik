@@ -10,6 +10,7 @@ async function handler(req, res) {
             const User_instance = new User({
                 uid: uid,
                 username:username,
+                image:image,
                 email:email,
                 roll: roll,
                 image: image,

@@ -18,6 +18,9 @@ const userSchema = new Schema(
     roll:{
       type:String,
     },
+    image:{
+      type:String,
+    } ,
     isAdmin: {
       type: Boolean,
       default: false,

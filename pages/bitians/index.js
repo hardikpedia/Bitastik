@@ -1,16 +1,18 @@
 import dbConnect from "../../lib/dbconnect";
 import User from '../../models/User'
 import ProfileList from "../../components/profile/profileList";
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Dropdownbtn from "../../components/profile/dropdownbtn";
 function BitPage(props) {
+    const superData=props.userData
     const [userData, setUserData] = useState(props.userData);
-    function filterData() {
-        // console.log(name);
-        const newData = userData.filter((info) => {
-            return info.branch === "CSE";
+    async function filterData(name) {
+         setUserData(superData);
+        const newData =await superData.filter((info) => {
+            return info.branch === name;
         })
         setUserData(newData)
+        console.log(newData);
     }
     return (
         <>

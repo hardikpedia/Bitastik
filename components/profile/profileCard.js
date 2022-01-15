@@ -4,13 +4,12 @@ import insta from '../../assets/insta.png'
 import git from '../../assets/git.png'
 import Image from "next/image"
 function ProfileCard({ info}) {
-    console.log(info);
     return (
         <main className={Classes.profile}>
             <div className={Classes.profileBg}></div>
             <section className={Classes.container}>
                 <aside className={Classes.profileImage}>
-                    {/* <Image src={info.}/> */}
+                    <Image src="https://www.linkpicture.com/q/WhatsApp-Image-2022-01-14-at-21.00.30.jpeg"  width={450} height={500} alt='undefined' />
                     <a className={Classes.camera} href="#">
                         <i class="fas fa-camera"></i>
                     </a>
