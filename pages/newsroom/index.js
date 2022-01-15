@@ -15,7 +15,7 @@ function NewsPage(props) {
 
 export async function getStaticProps() {
     await dbConnect()
-    const data = await news.find({})
+    const data = await news.find().sort({ "createdAt": -1 });
     // const news = JSON.parse(JSON.stringify(data))
     return {
         props: {

@@ -4,7 +4,9 @@ const HomeComponent = () => {
 
     return (
         <>
-        <ProfilePage/>
+        <div>
+                <ProfilePage />
+        </div>
         </>
 
     )

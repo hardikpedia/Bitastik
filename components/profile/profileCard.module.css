@@ -85,7 +85,7 @@
   position: absolute;
   animation-fill-mode: both;
   color: #57595D ;
-  -webkit-text-stroke: 1px red
+  -webkit-text-stroke: 1px  #f63d47;
 
 }
 

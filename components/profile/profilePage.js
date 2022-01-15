@@ -1,11 +1,11 @@
 import ProfileCard from './profileCard';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image';
 function profilePage() {
     const [user] = useAuthState(auth);
-    const [info,setInfo]=useState({})
+    const [info, setInfo] = useState({})
     useEffect(() => {
         if (user) {
             const fetchData = async () => {
@@ -17,7 +17,9 @@ function profilePage() {
         }
     }, [user]);
     return (
-     <ProfileCard info={info}/>
+        <div>
+            <ProfileCard info={info} />
+        </div>
     )
 }
 
