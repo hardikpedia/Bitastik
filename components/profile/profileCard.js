@@ -4,17 +4,19 @@ import insta from '../../assets/insta.png'
 import git from '../../assets/git.png'
 import whatsapp from '../../assets/whatsapp.png'
 import gmail from '../../assets/gmail.png'
-import profile from '../../assets/profile.jpeg'
+// import profile from '../../assets/profile.jpeg'
 import Image from "next/image"
 function ProfileCard({ info }) {
     const what = `https://wa.me/${info.phone}`
     const mail = `mailto:${info.email}`
+     console.log(info.image) 
+
     return (
         <main className={Classes.profile}>
             <div className={Classes.profileBg}></div>
             <section className={Classes.container}>
                 <aside className={Classes.profileImage}>
-                    <Image src="https://www.linkpicture.com/q/WhatsApp-Image-2022-01-14-at-21.00.30.jpeg" width={450} height={500} alt='undefined' objectFit='cover' />
+                    <Image src={info.image || whatsapp} width={450} height={500} alt='undefined' objectFit='cover' />
                 </aside>
                 {/* <div className={Classes.image}>
 

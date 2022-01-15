@@ -3,11 +3,34 @@ import TypeIt from "typeit-react";
 import React from 'react'
 import dynamic from 'next/dynamic'
 import dbConnect from '../lib/dbconnect'
-import { signInWithGoogle } from "../firebase/firebase";
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth, signInWithGoogle } from '../firebase/firebase'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
 const Footer = dynamic(() => import('../components/footer/footer'), { ssr: false })
 
 const HomeComponent = () => {
+    const [user] = useAuthState(auth)
+    const router = useRouter()
+    let href = router.pathname;
+    useEffect(() => {
+        const check = async () => {
+            if (user) {
+                const res = await fetch(`/api/profile/${user.uid}`)
+                const { users } = await res.json();
+                console.log(users);
+                if (!users) router.push('/dashboard/userprofile')
+                else if(href==='/'){
+                    router.push('/dashboard')
+                } 
+                else{
+                    router.push(href)
+                }
+            }
+        }
+        check();
+    },[user])
     return (
         <>
             <div className="clear">
@@ -16,7 +39,7 @@ const HomeComponent = () => {
                         options={{
                             strings: ["Bitastik"],
                             waitUntilVisible: true,
-                            cursorChar:" "
+                            cursorChar: " "
                         }}
                     />
 
@@ -32,10 +55,10 @@ const HomeComponent = () => {
                         }}
                     />
                 </h1>
-              
+
             </div>
-            
-            <div style={{height:"",bottom:"0",display:"flex",overflow:"clip"}}>
+
+            <div style={{ height: "", bottom: "0", display: "flex", overflow: "clip" }}>
                 <Footer />
 
             </div>

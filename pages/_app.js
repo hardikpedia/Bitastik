@@ -17,19 +17,17 @@ import Head from 'next/head'
 import Bold from '../assets/news.png'
 function MyApp({ Component, pageProps }) {
   const [user] = useAuthState(auth)
-  console.log(user)
   const router = useRouter()
   let href = router.pathname;
+  // useEffect(() => {
+  //   if (href === '/') {
+  //     if (user) router.push('/dashboard')
+  //   }
+  //   else {
+  //     if (user) router.push({ href })
 
-  useEffect(() => {
-    if (href === '/') {
-      if (user) router.push('/dashboard')
-    }
-    else {
-      if (user) router.push({ href })
-
-    }
-  }, [user])
+  //   }
+  // }, [user])
 
   return (
 

@@ -33,6 +33,7 @@ export async function getStaticProps() {
         props: {
             userData: data.map((info) => ({
                 uid: info.uid,
+                image:info.image,
                 username: info.username,
                 email: info.email,
                 roll: info.roll,
