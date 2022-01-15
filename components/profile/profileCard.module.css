@@ -77,12 +77,15 @@
   position: relative;
 }
 
+
 .profileInfo h1 {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0.7rem;
   position: absolute;
   animation-fill-mode: both;
+  color: #57595D ;
+  -webkit-text-stroke: 1px red
 
 }
 

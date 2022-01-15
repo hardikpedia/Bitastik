@@ -14,7 +14,7 @@ function dropdownbtn({ onSelect }) {
         }
     }
     return (
-        <div className={Classes.dropdown} style={{ position: "fixed", top: "0", right: "0" }}>
+        <div className={Classes.dropdown} style={{ position: "fixed", top: "0", right: "0",zIndex:"100" }}>
             <button className={Classes.dropbtn} onClick={dropClick}>Filter by Branch</button>
             <div id="myDropdown" className={Classes.dropdownContent} style={bts}>
                 <a onClick={clickHandler} name="CSE">CSE</a>
