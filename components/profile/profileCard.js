@@ -4,7 +4,7 @@ import insta from '../../assets/insta.png'
 import git from '../../assets/git.png'
 import whatsapp from '../../assets/whatsapp.png'
 import gmail from '../../assets/gmail.png'
-// import profile from '../../assets/profile.jpeg'
+import profile from '../../assets/shinchan.jpg'
 import Image from "next/image"
 function ProfileCard({ info }) {
     const what = `https://wa.me/${info.phone}`
@@ -16,7 +16,7 @@ function ProfileCard({ info }) {
             <div className={Classes.profileBg}></div>
             <section className={Classes.container}>
                 <aside className={Classes.profileImage}>
-                    <Image src={info.image || whatsapp} width={450} height={500} alt='undefined' objectFit='cover' />
+                    <Image src={info.image || profile} width={450} height={500} alt='undefined' objectFit='cover' />
                 </aside>
                 {/* <div className={Classes.image}>
 
