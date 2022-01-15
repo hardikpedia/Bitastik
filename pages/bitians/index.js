@@ -1,7 +1,7 @@
 import dbConnect from "../../lib/dbconnect";
 import User from '../../models/User'
 import ProfileList from "../../components/profile/profileList";
-import { useState,useEffect } from 'react'
+import { useState} from 'react'
 import Dropdownbtn from "../../components/profile/dropdownbtn";
 function BitPage(props) {
     const superData=props.userData
@@ -16,7 +16,6 @@ function BitPage(props) {
     }
     return (
         <>
-            {/* <button style={{ color: "red", position: "fixed", right: "0", top: "0" }} onClick={filterData}>Filter</button> */}
           <Dropdownbtn onSelect={filterData}/>
             <ProfileList data={userData} />
         </>
