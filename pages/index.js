@@ -19,7 +19,6 @@ const HomeComponent = () => {
             if (user) {
                 const res = await fetch(`/api/profile/${user.uid}`)
                 const { users } = await res.json();
-                console.log(users);
                 if (!users) router.push('/dashboard/userprofile')
                 else if(href==='/'){
                     router.push('/dashboard')
