@@ -12,13 +12,11 @@ const confessionSchema = new Schema(
     },
     upvotes: {
       type: Array,
-      unique:true,
       default: [],
     },
     downvotes: {
       type: Array,
       default: [],
-      unique: true,
 
     },
   },

@@ -3,6 +3,7 @@ import User from '../../models/User'
 import ProfileList from "../../components/profile/profileList";
 import { useState} from 'react'
 import Dropdownbtn from "../../components/profile/dropdownbtn";
+import Yogdrop from "../../components/profile/yogdrop";
 function BitPage(props) {
     const superData=props.userData
     const [userData, setUserData] = useState(props.userData);
@@ -12,11 +13,19 @@ function BitPage(props) {
             return info.branch === name;
         })
         setUserData(newData)
-        console.log(newData);
+    }
+    async function batchwise(name) {
+         setUserData(superData);
+        const newData =await superData.filter((info) => {
+            return info.yearofgraduation === parseInt(name);
+        })
+        console.log(name);
+        setUserData(newData)
     }
     return (
         <>
           <Dropdownbtn onSelect={filterData}/>
+          <Yogdrop onSelect={batchwise}/>
             <ProfileList data={userData} />
         </>
 

@@ -9,7 +9,6 @@ import Image from "next/image"
 function ProfileCard({ info }) {
     const what = `https://wa.me/${info.phone}`
     const mail = `mailto:${info.email}`
-     console.log(info.image) 
 
     return (
         <main className={Classes.profile}>

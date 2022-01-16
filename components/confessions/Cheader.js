@@ -11,7 +11,7 @@ function Cheader({ setConf }) {
   const [value, setValue] = useState('');
   const [data] = useAuthState(auth);
   const handleClick = async () => {
-    const info = await fetch('/api/confessions', {
+    await fetch('/api/confessions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

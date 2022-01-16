@@ -5,10 +5,11 @@ dbConnect();
 async function handler(req, res) {
     if (req.method === "POST") {
         try {
+            console.log("hiiii");
             const { uid, content } = req.body;
             const confession_instance = new Confession({
-                uid,
-                content,
+                uid:uid,
+                content:content,
             });
             await confession_instance.save();
             res.status(200).json({ message: "content Added", Status: "Success" });
