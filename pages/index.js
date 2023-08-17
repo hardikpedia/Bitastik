@@ -57,10 +57,10 @@ const HomeComponent = () => {
 
             </div>
 
-            <div style={{ height: "", bottom: "0", display: "flex", overflow: "clip" }}>
-                <Footer />
+            // <div style={{ height: "", bottom: "0", display: "flex", overflow: "clip" }}>
+            //     <Footer />
 
-            </div>
+            // </div>
         </>
 
     )
